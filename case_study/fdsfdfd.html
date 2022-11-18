@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>FURAMA</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <style>
+        .header {
+            /*background-image: url("https://i.pinimg.com/originals/86/41/6d/86416d71cbd1e608a5304bb92fc235ea.png");*/
+            /*background-image: url("https://griddl.co/wp-content/uploads/2020/07/griddl-overdose-lifeline.gif");*/
+            /*background-image: url("https://i.pinimg.com/originals/c7/1b/e0/c71be0510bb255fa135f19aa25a07fa7.gif");*/
+            background-image: url("https://wallpapersmug.com/download/1920x1080/4d7d03/light-colors-geometric-pattern-abstract.jpg");
+            /*background-image: url("https://armourroofinc.com/_images/thunder-1900.gif");*/
+        }
+
+        a {
+            text-decoration: none;
+            color: #bad8ff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #bad8ff;
+        }
+
+        .formCSS {
+            background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+        }
+
+        .modalCSS {
+            background-image: url("https://images.unsplash.com/photo-1607513746994-51f730a44832?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb");
+        }
+
+        body {
+            /*background-image: url("https://images.hdqwalls.com/download/dark-space-minimal-art-4k-ll-2560x1440.jpg");*/
+            background-image: url("https://cutewallpaper.org/27/black-wallpaper-iphone-gif/pin-on-things.gif");
+            /*background-image: url("https://www.bimbaylola.mx/on/demandware.static/-/Library-Sites-byl-shared-library/default/dw12dfb3d9/brand-thisiscosmic/desktop/fondo-estrellas.gif");*/
+        }
+
+        input:invalid {
+            border: 1px solid red;
+        }
+
+        input:valid {
+            border: 1px solid green;
+        }
+
+        .zoom:hover {
+            transform: scale(1.6);
+        }
+    </style>
+</head>
+<body>
+<header th:fragment="header" class="sticky-top">
+    <div class="container-fluid bg-gray-500 d-flex header" style="height: 100px">
+        <img class="h-100 p-4" src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" alt="">
+        <img class="ms-5 ps-5"
+             src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+             alt="">
+
+        <div class="container-fluid text-end my-4 me-4">
+            <div sec:authorize="isAuthenticated()">
+            <span class="mt-3" style="font-size: 15px">
+                    <strong sec:authentication="principal.username"></strong>
+            </span>
+
+                <a th:href="@{/logout}">
+                    <button class="btn btn-danger btn-outline-secondary text-light">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+                    </button>
+                </a>
+            </div>
+
+            <a th:href="@{/login}" sec:authorize="!isAuthenticated()">
+                <button class="btn btn-success btn-outline-secondary text-light">
+                    <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid mx-5">
+            <a class="navbar-brand font-weight-bold" th:href="@{/}">
+                <i class="fa-solid fa-house-chimney h5 mx-1"></i> Trang chủ
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!--                    <li class="nav-item dropdown ms-3" sec:authorize="hasRole('ADMIN')">-->
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Nhân viên</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/employee}">Danh sách nhân viên</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/employee/create}">Thêm nhân viên mới</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Khách hàng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/customer}">Danh sách khách hàng</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/customer/create}">Thêm khách hàng mới</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Dịch vụ</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/facility}">Danh sách dịch vụ</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/facility/create}">Thêm dịch vụ mới</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">Hợp đồng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/contract}">Danh sách hợp đồng</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" data-bs-toggle="modal"
+                                   data-bs-target="#addContract">Thêm hợp đồng mới</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid" style="height: 480px">
+    <div class="row mx-3 pt-3">
+        <div class="col-2">
+            <img class="img-fluid mt-5"
+                 src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png" alt="">
+        </div>
+
+        <div class="col-10">
+            <img class="img-fluid mt-4 ms-2 border border-4 border-secondary"
+                 src="http://ngocdiep.vn/wp-content/uploads/2020/12/4.flamigo-cat-ba.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-5">
+    <div class="mt-3 mb-3">
+        <span class="h4 text-light">KHÔNG NGỪNG KIẾN TẠO GIÁ TRỊ MỚI!</span>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-6">
+            <video class="img-fluid" autoplay muted>
+                <source type="video/mp4"
+                        src="https://eus-streaming-video-rt-microsoft-com.akamaized.net/a78db3a2-57da-4003-a36b-93006f422299/cf0c290f-39a0-48b5-b9a8-4e0dce7830e2.mp4">
+            </video>
+        </div>
+
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card shadow container-fluid bg-secondary" style="width: 20rem;">
+                        <img src="https://phulong.com/UploadFiles/Images/FURAMA%2020%20NAM.jpg"
+                             class="card-img-top mt-3" alt="">
+
+                        <div class="card-body">
+                            <a class="link-light h4">FURAMA ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card shadow container-fluid bg-secondary" style="width: 20rem;">
+                        <img src="https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg"
+                             class="card-img-top mt-3" alt="">
+
+                        <div class="card-body">
+                            <a class="link-light h4">Villa ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3">
+                <div class="col-6">
+                    <div class="card shadow container-fluid bg-secondary" style="width: 20rem;">
+                        <img src="https://images.adsttc.com/media/images/5ecd/d4ac/b357/65c6/7300/009d/large_jpg/02C.jpg?1590547607"
+                             class="card-img-top mt-3" alt="">
+
+                        <div class="card-body">
+                            <a class="link-light h4">House ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card shadow container-fluid bg-secondary" style="width: 20rem;">
+                        <img src="https://www.thespruce.com/thmb/0mCrVrlgAOLHm03zxtJxMd8RIwQ=/2048x1365/filters:fill(auto,1)/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg"
+                             class="card-img-top mt-3" alt="">
+
+                        <div class="card-body">
+                            <a class="link-light h4">Room ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-light h5 mb-2">TOP KHÁCH HÀNG tháng 10/2022</p>
+
+    <div class="container-fluid">
+        <div class="row mx-3">
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">1. Hồ Thị Thủy Lợi</p>
+                <img class="img-fluid zoom border border-danger border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/fe4ef841c2aa37ea4058a39b62342083.jpeg"
+                     alt="">
+            </div>
+
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">2. Phạm Đạt</p>
+                <img class="img-fluid zoom border border-warning border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/ed8e5cd27c9b6e42aff7348d37df70ca.jpeg"
+                     alt="">
+            </div>
+
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">3. Nguyễn Duy Quyết</p>
+                <img class="img-fluid zoom border border-danger border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/593ce0d360800a9305a85f23f2ed7a06.jpeg" alt="">
+            </div>
+
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">4. Huỳnh Văn Nam</p>
+                <img class="img-fluid zoom border border-warning border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/4b22363302c221ade7b15b2e723febea.jpeg"
+                     alt="">
+            </div>
+
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">5. Nguyễn Tấn Huân</p>
+                <img class="img-fluid zoom border border-danger border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/e791353a34ddf7bdd5f3e0ce61db6108.jpeg" alt="">
+            </div>
+
+            <div class="col-2">
+                <p class="ms-2 mt-2 text-light">6. Hà Bảo Ân</p>
+                <img class="img-fluid zoom border border-warning border-2 mb-2"
+                     src="https://andy.codegym.vn/storage/images/avatars/701964623b31d1a5f4d07079c5d67e4a.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:fragment="footer">
+    <div class="container-fluid text-center footer mt-5" style="height: 50px">
+        <strong class="text-light pt-2">&copy;FURAMA - chính thức hoạt động từ năm 1997.</strong>
+    </div>
+</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</html>
