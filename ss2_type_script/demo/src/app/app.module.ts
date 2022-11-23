@@ -9,6 +9,8 @@ import { ArticleComponent } from './ss4_angular_component_template/article/artic
 import { FooterComponent } from './ss4_angular_component_template/article/footer/footer.component';
 import { LikeComponent } from './ss4_angular_component_template/article/like/like.component';
 import { NavbarComponent } from './ss4_angular_component_template/article/navbar/navbar.component';
+import { CountdownTimesComponent } from './ss5_angular_component_interaction/countdown-times/countdown-times.component';
+import { RatingBarComponent } from './ss5_angular_component_interaction/rating-bar/rating-bar.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { NavbarComponent } from './ss4_angular_component_template/article/navbar
     FooterComponent,
     LikeComponent,
     NavbarComponent,
+    CountdownTimesComponent,
+    RatingBarComponent,
 
   ],
   imports: [

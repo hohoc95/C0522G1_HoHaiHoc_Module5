@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card border-primary">
+        <h3 class="card-header bg-body">Parent Component</h3>
+        <div class="card-body">
+          <h4 class="card-title">Student List</h4>
+          <table class="table">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Point</th>
+              <th>Result</th>
+            </tr>
+            <tr *ngFor="let item of students; let i = index" (click)="showDetail(item)">
+
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
