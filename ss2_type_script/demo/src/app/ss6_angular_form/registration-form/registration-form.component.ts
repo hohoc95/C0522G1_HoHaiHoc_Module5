@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
-import {ValidateFn} from "codelyzer/walkerFactory/walkerFn";
 
 export const reConfirmPass: ValidatorFn = (control: AbstractControl): ValidationErrors | null =>{
   const passWord = control.get("password");
@@ -21,14 +20,14 @@ export const reConfirmPass: ValidatorFn = (control: AbstractControl): Validation
 export class RegistrationFormComponent implements OnInit {
   title = 'AngularForm';
 
-  //tạo đối tượng rfStudent
-  rfStudent: FormGroup;
+  //tạo đối tượng rfForm
+  rfForm: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.rfStudent = this._formBuilder.group({
+    this.rfForm = this._formBuilder.group({
       name: [, [
         Validators.required,
         Validators.minLength(5)
@@ -91,8 +90,8 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.rfStudent.valid) {
-      console.log(this.rfStudent.value);
+    if (this.rfForm.valid) {
+      console.log(this.rfForm.value);
     }
   }
 

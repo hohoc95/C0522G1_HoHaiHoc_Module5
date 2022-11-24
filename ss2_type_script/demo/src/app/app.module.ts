@@ -13,6 +13,7 @@ import { NavbarComponent } from './ss4_angular_component_template/article/navbar
 import { RatingBarComponent } from './ss5_angular_component_interaction/rating-bar/rating-bar.component';
 import { DemoFormComponent } from './ss6_angular_form/demo-form/demo-form.component';
 import { RegistrationFormComponent } from './ss6_angular_form/registration-form/registration-form.component';
+import { LoginFormComponent } from './ss6_angular_form/login-form/login-form.component';
 // import { CreateComponent } from './ss6_angular_form/demo-form/create/create.component';
 // import { DetailComponent } from './ss6_angular_form/demo-form/detail/detail.component';
 
@@ -30,6 +31,7 @@ import { RegistrationFormComponent } from './ss6_angular_form/registration-form/
     RatingBarComponent,
     DemoFormComponent,
     RegistrationFormComponent,
+    LoginFormComponent,
     // CreateComponent,
     // DetailComponent,
 
