@@ -1,0 +1,122 @@
+<!--<p>registration-form works!</p>-->
+<!--<p>demo-form works!</p>-->
+<div class="container">
+  <h2>Registration form</h2>
+  <form [formGroup]="rfStudent" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['name'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['name'].hasError('required')
+        && rfStudent.controls['name'].touched">
+          Please provide a student name!
+        </div>
+        <div *ngIf="rfStudent.controls['name'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input formControlName="email" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['email'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['email'].hasError('required')
+        && rfStudent.controls['email'].touched">
+          Please provide a student name!
+        </div>
+        <div *ngIf="rfStudent.controls['email'].hasError('email')">
+          Please input match format email!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control"
+             [ngClass]="rfStudent.controls['password'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['password'].hasError('required')
+        && rfStudent.controls['password'].touched">
+          Please provide a student password!
+        </div>
+        <div *ngIf="rfStudent.controls['password'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ConfirmPassword</label>
+      <input formControlName="confirmPassword" type="password" class="form-control"
+             [ngClass]="rfStudent.controls['confirmPassword'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['confirmPassword'].hasError('required')
+        && rfStudent.controls['confirmPassword'].touched">
+          Please provide a student password!
+        </div>
+        <div *ngIf="rfStudent.controls['confirmPassword'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+        <div *ngIf="rfStudent.hasError('reConfirmPass')" class="invalid-feedback">
+          Password not match!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Country</label>
+      <select formControlName="country" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['country'].invalid ? 'is-invalid' : 'is-valid'">
+        <option>VietNam</option>
+        <option>China</option>
+        <option>Japan</option>
+        <option>USA</option>
+        <option>UK</option>
+      </select>
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['country'].hasError('required')
+        && rfStudent.controls['country'].touched">
+          Please provide a student address!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Age</label>
+      <input formControlName="age" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['age'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['age'].hasError('required')
+        && rfStudent.controls['age'].touched">
+          Please provide a age!
+        </div>
+        <div *ngIf="rfStudent.controls['age'].hasError('min')">
+          Please input min age > 19!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input formControlName="phone" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['phone'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['phone'].hasError('required')
+        && rfStudent.controls['phone'].touched">
+          Please provide a phone!
+        </div>
+        <div *ngIf="rfStudent.controls['phone'].hasError('minlength')">
+          Please input min length > 8!
+        </div>
+        <div *ngIf="rfStudent.controls['phone'].hasError('maxlength')">
+          Please input max length < 12!
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!rfStudent.valid">Submit</button>
+  </form>
+</div>

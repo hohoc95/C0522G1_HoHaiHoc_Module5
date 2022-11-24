@@ -1,0 +1,91 @@
+<!--<p>demo-form works!</p>-->
+<div class="container">
+  <h2>Create student</h2>
+  <form [formGroup]="rfStudent" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="mb-3">
+      <label class="form-label">Student Name</label>
+      <input formControlName="name" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['name'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['name'].hasError('required')
+        && rfStudent.controls['name'].touched">
+          Please provide a student name!
+        </div>
+        <div *ngIf="rfStudent.controls['name'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Point</label>
+      <input formControlName="point" type="number" class="form-control"
+             [ngClass]="rfStudent.controls['point'].invalid ? 'is-invalid' : 'is-valid'">
+
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['point'].hasError('required')
+        && rfStudent.controls['point'].touched">
+          Please provide a student point!
+        </div>
+<!--        <div *ngIf="rfStudent.controls['point'].hasError('minlength')">-->
+<!--          Please input min length > 5!-->
+<!--        </div>-->
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Address</label>
+      <input formControlName="address" type="text" class="form-control"
+             [ngClass]="rfStudent.controls['address'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['address'].hasError('required')
+        && rfStudent.controls['address'].touched">
+          Please provide a student address!
+        </div>
+        <div *ngIf="rfStudent.controls['address'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+<!--      <div class="valid-feedback">-->
+<!--        Looks good!-->
+<!--      </div>-->
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control"
+      [ngClass]="rfStudent.controls['password'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['password'].hasError('required')
+        && rfStudent.controls['password'].touched">
+          Please provide a student password!
+        </div>
+        <div *ngIf="rfStudent.controls['password'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+<!--      <div class="valid-feedback">-->
+<!--        Looks good!-->
+<!--      </div>-->
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ConfirmPassword</label>
+      <input formControlName="confirmPassword" type="password" class="form-control"
+      [ngClass]="rfStudent.controls['confirmPassword'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfStudent.controls['confirmPassword'].hasError('required')
+        && rfStudent.controls['confirmPassword'].touched">
+          Please provide a student password!
+        </div>
+        <div *ngIf="rfStudent.controls['confirmPassword'].hasError('minlength')">
+          Please input min length > 5!
+        </div>
+      </div>
+<!--      <div class="valid-feedback">-->
+<!--        Looks good!-->
+<!--      </div>-->
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!rfStudent.valid">Submit</button>
+  </form>
+</div>

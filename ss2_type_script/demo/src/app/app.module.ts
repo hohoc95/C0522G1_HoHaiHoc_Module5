@@ -4,13 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './ss3_angular_overview/calculator/calculator.component';
 import { ColorPickComponent } from './ss3_angular_overview/color-pick/color-pick.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ArticleComponent } from './ss4_angular_component_template/article/article.component';
 import { FooterComponent } from './ss4_angular_component_template/article/footer/footer.component';
 import { LikeComponent } from './ss4_angular_component_template/article/like/like.component';
 import { NavbarComponent } from './ss4_angular_component_template/article/navbar/navbar.component';
-import { CountdownTimesComponent } from './ss5_angular_component_interaction/countdown-times/countdown-times.component';
+// import { CountdownTimesComponent } from './ss5_angular_component_interaction/countdown-times/countdown-times.component';
 import { RatingBarComponent } from './ss5_angular_component_interaction/rating-bar/rating-bar.component';
+import { DemoFormComponent } from './ss6_angular_form/demo-form/demo-form.component';
+import { RegistrationFormComponent } from './ss6_angular_form/registration-form/registration-form.component';
+// import { CreateComponent } from './ss6_angular_form/demo-form/create/create.component';
+// import { DetailComponent } from './ss6_angular_form/demo-form/detail/detail.component';
 
 
 @NgModule({
@@ -22,13 +26,18 @@ import { RatingBarComponent } from './ss5_angular_component_interaction/rating-b
     FooterComponent,
     LikeComponent,
     NavbarComponent,
-    CountdownTimesComponent,
+    // CountdownTimesComponent,
     RatingBarComponent,
+    DemoFormComponent,
+    RegistrationFormComponent,
+    // CreateComponent,
+    // DetailComponent,
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
