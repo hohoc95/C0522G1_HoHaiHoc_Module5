@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IWord} from '../../model/IWord';
-import {DictionaryService} from '../../service/dictionary.service';
+import {IWord} from '../model/IWord';
+import {DictionaryService} from '../service/dictionary.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
