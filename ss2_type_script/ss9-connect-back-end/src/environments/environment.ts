@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
+  api_url_todo:'http://localhost:3000/todos',
 
-//  Đường dẫn đến database của product
-  api_product_url:"http://localhost:3000/products"
 };
 
 /*
