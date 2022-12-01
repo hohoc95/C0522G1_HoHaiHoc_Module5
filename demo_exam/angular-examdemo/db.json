@@ -1,0 +1,94 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "categoryName": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "categoryName": "Tivi"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "productName": "Iphone 14",
+      "productPrice": 2000,
+      "productDescription": "Mới",
+      "category": {
+        "id": 1,
+        "categoryName": "Điện thoại"
+      }
+    },
+    {
+      "id": 2,
+      "productName": "Iphone 14 Pro",
+      "productPrice": 2500,
+      "productDescription": "Mới",
+      "category": {
+        "id": 1,
+        "categoryName": "Điện thoại"
+      }
+    },
+    {
+      "id": 3,
+      "productName": "Iphone 12 Pro",
+      "productPrice": 1500,
+      "productDescription": "Mới",
+      "category": {
+        "id": 1,
+        "categoryName": "Điện thoại"
+      }
+    },
+    {
+      "id": 4,
+      "productName": "Tivi LG Smart",
+      "productPrice": 2200,
+      "productDescription": "Mới",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      }
+    },
+    {
+      "id": 5,
+      "productName": "Tivi LG NanoCell",
+      "productPrice": 2500,
+      "productDescription": "Mới",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      }
+    },
+    {
+      "id": 6,
+      "productName": "Tivi LG NanoCell Pro",
+      "productPrice": 2500,
+      "productDescription": "Mới",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      }
+    },
+    {
+      "productName": "Tivi LG Smart 2022",
+      "productPrice": "2800",
+      "productDescription": "Siêu Mới",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      },
+      "id": 7
+    },
+    {
+      "productName": "Tivi LG SuperMan",
+      "productPrice": "2500",
+      "productDescription": "Mới",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      },
+      "id": 8
+    }
+  ]
+}
