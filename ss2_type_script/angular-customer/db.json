@@ -1,0 +1,180 @@
+{
+  "customerTypes": [
+    {
+      "id": 1,
+      "customerTypeName": "Member"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "Silver"
+    },
+    {
+      "id": 3,
+      "customerTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "customerTypeName": "Platinium"
+    },
+    {
+      "id": 5,
+      "customerTypeName": "Diamond"
+    }
+  ],
+  "customers": [
+    {
+      "id": 8,
+      "customerName": "Blayne Campanelle",
+      "customerBirthday": "1981-08-26",
+      "customerGender": 0,
+      "customerIdCard": "733525583",
+      "customerPhone": "0905956137",
+      "customerEmail": "bcampanelle7@reference.com",
+      "customerAddress": "5 Garrison Park",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 9,
+      "customerName": "Shandeigh Haydn",
+      "customerBirthday": "1975-04-05",
+      "customerGender": 1,
+      "customerIdCard": "038576748",
+      "customerPhone": "0909177942",
+      "customerEmail": "shaydn8@wikipedia.org",
+      "customerAddress": "85 Trailsway Pass",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 11,
+      "customerName": "Antonino Waplington",
+      "customerBirthday": "2001-04-17",
+      "customerGender": 0,
+      "customerIdCard": "077770199",
+      "customerPhone": "0907063974",
+      "customerEmail": "awaplingtona@opensource.org",
+      "customerAddress": "5618 Loftsgordon Park",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 12,
+      "customerName": "Gnni Rathbourne",
+      "customerBirthday": "1985-09-24",
+      "customerGender": 1,
+      "customerIdCard": "301818930",
+      "customerPhone": "0909094428",
+      "customerEmail": "grathbourneb@dmoz.org",
+      "customerAddress": "092 Derek Parkway",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 14,
+      "customerName": "Minnaminnie Vahl",
+      "customerBirthday": "2001-02-03",
+      "customerGender": 2,
+      "customerIdCard": "064778630",
+      "customerPhone": "0903366923",
+      "customerEmail": "mvahld@feedburner.com",
+      "customerAddress": "6 Burning Wood Plaza",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 15,
+      "customerName": "Cassandra Riseam",
+      "customerBirthday": "1978-04-18",
+      "customerGender": 0,
+      "customerIdCard": "275664763",
+      "customerPhone": "0909943880",
+      "customerEmail": "criseame@histats.com",
+      "customerAddress": "28 Sommers Hill",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 16,
+      "customerName": "Tabatha Aldhouse",
+      "customerBirthday": "1982-06-16",
+      "customerGender": 1,
+      "customerIdCard": "813303610",
+      "customerPhone": "0909490231",
+      "customerEmail": "taldhousef@yahoo.co.jp",
+      "customerAddress": "67092 Rigney Way",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 17,
+      "customerName": "Pennie MacDuffie",
+      "customerBirthday": "1976-06-13",
+      "customerGender": 2,
+      "customerIdCard": "382313987",
+      "customerPhone": "0901834244",
+      "customerEmail": "pmacduffieg@hubpages.com",
+      "customerAddress": "560 Center Pass",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 18,
+      "customerName": "Jilli Koene",
+      "customerBirthday": "1979-01-07",
+      "customerGender": 0,
+      "customerIdCard": "843352222",
+      "customerPhone": "0904855149",
+      "customerEmail": "jkoeneh@facebook.com",
+      "customerAddress": "86777 Ruskin Hill",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 19,
+      "customerName": "Ysabel Pilkinton",
+      "customerBirthday": "1981-08-05",
+      "customerGender": 1,
+      "customerIdCard": "358447687",
+      "customerPhone": "0904509051",
+      "customerEmail": "ypilkintoni@google.it",
+      "customerAddress": "033 Vahlen Alley",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    },
+    {
+      "id": 20,
+      "customerName": "Gerty Cotton",
+      "customerBirthday": "1981-11-08",
+      "customerGender": 0,
+      "customerIdCard": "723721894",
+      "customerPhone": "0901012979",
+      "customerEmail": "gcottonj@blogtalkradio.com",
+      "customerAddress": "504 Victoria Court",
+      "customerType": {
+        "id": "1",
+        "customerTypeName": "Member"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "class": [
+    {
+      "id": 1,
+      "className": "C0522G1"
+    },
+    {
+      "id": 2,
+      "className": "C0422G1"
+    },
+    {
+      "id": 3,
+      "className": "C0622G1"
+    }
+  ],
+  "student": [
+    {
+      "id": 1,
+      "studentName": "Nguyễn A",
+      "studentGender": "Nam",
+      "studentAge": 22,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 85,
+      "class": {
+        "id": 1,
+        "className": "C0522G1"
+      }
+    },
+    {
+      "id": 2,
+      "studentName": "Nguyễn B",
+      "studentGender": "Nam",
+      "studentAge": 25,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 80,
+      "class": {
+        "id": 2,
+        "className": "C0422G1"
+      }
+    },
+    {
+      "id": 3,
+      "studentName": "Nguyễn C",
+      "studentGender": "Nam",
+      "studentAge": 20,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 82,
+      "class": {
+        "id": 3,
+        "className": "C0622G1"
+      }
+    },
+    {
+      "id": 4,
+      "studentName": "Nguyễn D",
+      "studentGender": "Nam",
+      "studentAge": 25,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 90,
+      "class": {
+        "id": 2,
+        "className": "C0422G1"
+      }
+    },
+    {
+      "id": 5,
+      "studentName": "Nguyễn E",
+      "studentGender": "Nam",
+      "studentAge": 25,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 90,
+      "class": {
+        "id": 3,
+        "className": "C0622G1"
+      }
+    },
+    {
+      "id": 6,
+      "studentName": "Nguyễn F",
+      "studentGender": "Nam",
+      "studentAge": 25,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": 80,
+      "class": {
+        "id": 1,
+        "className": "C0522G1"
+      }
+    }
+  ]
+}
