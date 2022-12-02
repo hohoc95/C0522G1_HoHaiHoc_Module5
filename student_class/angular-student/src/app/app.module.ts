@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentCreateComponent } from './student/student-create/student-create.component';
 import { StudentEditComponent } from './student/student-edit/student-edit.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
@@ -16,12 +16,13 @@ import {HttpClientModule} from "@angular/common/http";
     StudentCreateComponent,
     StudentEditComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

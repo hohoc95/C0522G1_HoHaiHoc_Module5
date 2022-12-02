@@ -17,7 +17,7 @@
     {
       "id": 1,
       "studentName": "Nguyễn A",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 22,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 85,
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "studentName": "Nguyễn B",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 25,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 80,
@@ -41,7 +41,7 @@
     {
       "id": 3,
       "studentName": "Nguyễn C",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 20,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 82,
@@ -53,7 +53,7 @@
     {
       "id": 4,
       "studentName": "Nguyễn D",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 25,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 90,
@@ -65,7 +65,7 @@
     {
       "id": 5,
       "studentName": "Nguyễn E",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 25,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 90,
@@ -77,7 +77,7 @@
     {
       "id": 6,
       "studentName": "Nguyễn F",
-      "studentGender": "Nam",
+      "studentGender": 0,
       "studentAge": 25,
       "studentAddress": "Đà Nẵng",
       "studentPoint": 80,
@@ -85,6 +85,30 @@
         "id": 1,
         "className": "C0522G1"
       }
+    },
+    {
+      "studentName": "Nguyễn G",
+      "studentGender": 0,
+      "studentAge": 26,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": "89",
+      "class": {
+        "id": 1,
+        "className": "C0522G1"
+      },
+      "id": 7
+    },
+    {
+      "studentName": "Nguyễn H",
+      "studentGender": 0,
+      "studentAge": 26,
+      "studentAddress": "Đà Nẵng",
+      "studentPoint": "85",
+      "class": {
+        "id": 1,
+        "className": "C0522G1"
+      },
+      "id": 8
     }
   ]
 }

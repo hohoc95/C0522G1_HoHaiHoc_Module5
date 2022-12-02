@@ -1,0 +1,126 @@
+{
+  "nhaXe": [
+    {
+      "id": 1,
+      "tenNhaXe": "Nhà xe Phương Trang"
+    },
+    {
+      "id": 2,
+      "tenNhaXe": "Nhà xe Trung Nguyên"
+    },
+    {
+      "id": 3,
+      "tenNhaXe": "Nhà xe Trung Tín"
+    }
+  ],
+  "veXe": [
+    {
+      "id": 1,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Huế",
+      "ngayKhoiHanh": "06/09/2021",
+      "gioKhoiHanh": "20:00",
+      "giaVe": 100000,
+      "soLuong": 10,
+      "nhaXe": {
+        "id": 1,
+        "tenNhaXe": "Nhà xe Phương Trang"
+      }
+    },
+    {
+      "id": 2,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Hải Phòng",
+      "ngayKhoiHanh": "10/09/2021",
+      "gioKhoiHanh": "06:00",
+      "giaVe": 5000000,
+      "soLuong": 5,
+      "nhaXe": {
+        "id": 2,
+        "tenNhaXe": "Nhà xe Trung Nguyên"
+      }
+    },
+    {
+      "id": 3,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Hà Nội",
+      "ngayKhoiHanh": "09/10/2021",
+      "gioKhoiHanh": "07:40",
+      "giaVe": 4500000,
+      "soLuong": 15,
+      "nhaXe": {
+        "id": 3,
+        "tenNhaXe": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 4,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Nam",
+      "ngayKhoiHanh": "09/10/2021",
+      "gioKhoiHanh": "07:40",
+      "giaVe": 4500000,
+      "soLuong": 15,
+      "nhaXe": {
+        "id": 3,
+        "tenNhaXe": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 5,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Nam",
+      "ngayKhoiHanh": "09/10/2021",
+      "gioKhoiHanh": "07:40",
+      "giaVe": 4500000,
+      "soLuong": 15,
+      "nhaXe": {
+        "id": 3,
+        "tenNhaXe": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 6,
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Nam",
+      "ngayKhoiHanh": "09/10/2021",
+      "gioKhoiHanh": "07:40",
+      "giaVe": 4500000,
+      "soLuong": 15,
+      "nhaXe": {
+        "id": 3,
+        "tenNhaXe": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "diemDi": "",
+      "diemDen": "Đà Nẵng",
+      "ngayKhoiHanh": "2022-12-09",
+      "gioKhoiHanh": "11:00",
+      "soLuong": 20,
+      "giaVe": 2000000,
+      "nhaXe": "",
+      "id": 7
+    },
+    {
+      "diemDi": "",
+      "diemDen": "Đà Nẵng",
+      "ngayKhoiHanh": "2022-11-30",
+      "gioKhoiHanh": "08:08",
+      "soLuong": 20,
+      "giaVe": 2000000,
+      "nhaXe": "",
+      "id": 8
+    },
+    {
+      "diemDi": "",
+      "diemDen": "Lai Châu",
+      "ngayKhoiHanh": "2019-09-09",
+      "gioKhoiHanh": "09:09",
+      "soLuong": 9,
+      "giaVe": 99999999999,
+      "nhaXe": "",
+      "id": 9
+    }
+  ]
+}

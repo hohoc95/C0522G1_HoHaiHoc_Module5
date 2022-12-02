@@ -1,0 +1,96 @@
+<div class="p-3 px-5">
+  <h2 class="text-center fw-bold text-light mt-3">
+    DANH SÁCH VÉ XE </h2>
+
+  <nav class="navbar navbar-expand-lg py-0 my-0">
+    <div class="container-fluid">
+      <a routerLink="/create">
+        <button class="btn btn-primary btn-outline-secondary">
+          <span class="text-light"> Thêm vé</span>
+        </button>
+      </a>
+
+      <div class="d-flex my-2" role="search">
+        <input class="form-control me-2" type="text" placeholder="Điểm đi..." aria-label="Search"
+               [(ngModel)]="diemDi">
+
+        <input class="form-control me-2" type="text" placeholder="Điểm đến..." aria-label="Search"
+               [(ngModel)]="diemDen">
+
+        <button class="btn btn-light btn-outline-warning me-2" (click)="resetSearchInput()">
+          <i class="fa-solid fa-xmark"></i></button>
+
+        <button class="btn btn-light btn-outline-primary" (click)="searchByMore()">
+          <i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-light table-striped table-bordered" id="productTable">
+    <thead>
+    <tr class="table-dark text-light">
+      <th class="text-center">STT</th>
+      <th>Diem di</th>
+      <th>Diem den</th>
+      <th>Gia ve </th>
+      <th>Ngay khoi hanh</th>
+      <th>Gio khoi hanh</th>
+      <th>Nha xe</th>
+      <th>So luong</th>
+      <th class="test-center">Dat ve</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of vexeListPaging; index as i">
+      <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>
+      <td>{{item.diemDi| titlecase}}</td>
+      <!--      <td>{{item.studentGender}}</td>-->
+
+      <td>{{item.diemDen}}</td>
+      <td>{{item.giaVe}}</td>
+      <td>{{item.giaVe}}</td>
+      <!--      <td>{{item.studentPoint}}</td>-->
+      <td>{{item.ngayKhoiHanh}}</td>
+      <td>{{item.gioKhoiHanh}}</td>
+
+      <td>{{item.nhaXe.tenNhaXe}}</td>
+      <td>{{item.soLuong}}</td>
+
+
+      <td class="text-center">
+        <button class="btn btn-info btn-outline-secondary btn-sm"
+                (click)="datve(item.id, item.diemDi, item.diemDen, item.ngayKhoiHanh, item.gioKhoiHanh)">Đặt vé
+          <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+          <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
+        </button>
+      </td>
+
+
+
+    </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="..." class="justify-content-center d-flex">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+
+      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+</div>

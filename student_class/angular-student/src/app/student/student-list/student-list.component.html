@@ -1,1 +1,118 @@
-<p>student-list works!</p>
+<div class="p-3 px-5">
+  <h2 class="text-center fw-bold text-light mt-3">
+    DANH SÁCH SẢN PHẨM </h2>
+
+  <nav class="navbar navbar-expand-lg py-0 my-0">
+    <div class="container-fluid">
+      <a routerLink="/create">
+        <button class="btn btn-primary btn-outline-secondary">
+          <span class="text-light"> Thêm mới học sinh</span>
+        </button>
+      </a>
+
+      <div class="d-flex my-2" role="search">
+        <input class="form-control me-2" type="text" placeholder="Nhập tên học sinh..." aria-label="Search"
+               [(ngModel)]="nameSearch">
+
+        <select class="form-select me-2" [(ngModel)]="classSearch" [compareWith]="compareWithId"
+                aria-label="Search">
+          <option [value]="''" disabled>Lớp học...</option>
+          <option *ngFor="let item of class" [ngValue]="item.className">
+            {{item.className}}</option>
+        </select>
+
+        <button class="btn btn-light btn-outline-warning me-2" (click)="resetSearchInput()">
+          <i class="fa-solid fa-xmark"></i></button>
+
+        <button class="btn btn-light btn-outline-primary" (click)="searchByMore()">
+          <i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-light table-striped table-bordered" id="productTable">
+    <thead>
+    <tr class="table-dark text-light">
+      <th class="text-center">STT</th>
+      <th>Tên</th>
+      <th>Giới tính</th>
+      <th>Tuổi </th>
+      <th>Địa chỉ</th>
+      <th>Điểm</th>
+      <th>Lớp học</th>
+      <th class="test-center">Chi tiết</th>
+      <th class="text-center">Sửa</th>
+      <th class="text-center">Xóa</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of studentListPaging; index as i">
+      <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>
+      <td>{{item.studentName | titlecase}}</td>
+      <!--      <td>{{item.studentGender}}</td>-->
+      <td>
+        <span *ngIf="item.studentGender == 0">Nam</span>
+        <span *ngIf="item.studentGender == 1">Nữ</span>
+        <span *ngIf="item.studentGender == 2">LGBT</span>
+      </td>
+      <td>{{item.studentAge}}</td>
+      <td>{{item.studentAddress}}</td>
+<!--      <td>{{item.studentPoint}}</td>-->
+      <td >
+        <span *ngIf="item.studentPoint >=75;else elseBlock">Pass</span>
+        <ng-template #elseBlock>
+          <span>Fail</span>
+        </ng-template>
+      </td>
+      <td>{{item.class.className}}</td>
+
+      <td class="text-center">
+        <button class="btn btn-info btn-outline-secondary btn-sm"
+                (click)="detailStudent(item.id, item.studentName, item.studentAge, item.studentPoint)">Detail
+          <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+          <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
+        </button>
+      </td>
+
+      <td class="text-center">
+        <a routerLink="/edit/{{item.id}}">
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+<!--            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>-->
+            <span class="fa-solid fa-thin fa-pen-to-square text-light h6 m-auto px-2"></span>
+          </button>
+        </a>
+      </td>
+
+      <td class="text-center">
+        <button class="btn btn-danger btn-outline-secondary btn-sm"
+                (click)="deleteStudent(item.id, item.studentName)">
+<!--          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>-->
+          <span class="fa-solid fa-trash text-light h6 m-auto px-2"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="..." class="justify-content-center d-flex">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+
+      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
