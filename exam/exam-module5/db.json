@@ -1,0 +1,58 @@
+{
+  "ticket-sell": [
+    {
+      "id": 1,
+      "ticketSellName": "Nhà xe Phương Trang"
+    },
+    {
+      "id": 2,
+      "ticketSellName": "Nhà xe Trung Nguyên"
+    },
+    {
+      "id": 3,
+      "ticketSellName": "Nhà xe Trung Tín"
+    }
+  ],
+  "ticket": [
+    {
+      "id": 1,
+      "departure": "Đà Nẵng",
+      "destination": "Huế",
+      "departureDay": "06/09/2021",
+      "departureTime": "20:00",
+      "ticketPrice": 100000,
+      "amount": 10,
+      "ticketSell": {
+        "id": 1,
+        "ticketSellName": "Nhà xe Phương Trang"
+      }
+    },
+
+    {
+      "id": 2,
+      "departure": "Đà Nẵng",
+      "destination": "Hải Phòng",
+      "departureDay": "10/09/2021",
+      "departureTime": "06:00",
+      "ticketPrice": 5000000,
+      "amount": 5,
+      "ticketSell": {
+        "id": 2,
+        "ticketSellName": "Nhà xe Trung Nguyên"
+      }
+    },
+    {
+      "id": 3,
+      "departure": "Đà Nẵng",
+      "destination": "Hà Nội",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    }
+  ]
+}
