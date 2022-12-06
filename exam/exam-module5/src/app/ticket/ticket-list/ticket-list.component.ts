@@ -38,11 +38,11 @@ export class TicketListComponent implements OnInit {
     });
 
     this.ticketService.findTicketSearchPaging(this.numberRecord, this.curPage, this.departure, this.destination, this.departureDay, this.departureTime).subscribe(pagingList => {
-      this.ticketService = pagingList;
+      this.ticketListPaging = pagingList;
     }, error => {
       console.log(error);
     }, () => {
-      console.log("Hiển thị học sinh ở trang " + this.curPage);
+      console.log("Hiển thị vé xe ở trang " + this.curPage);
     });
   }
 
@@ -55,21 +55,43 @@ export class TicketListComponent implements OnInit {
     });
   }
 
+  next(): void {
+    this.curPage++;
+    this.getAllTicketPaging();
+  }
+
+  previos(): void {
+    this.curPage--;
+    this.getAllTicketPaging();
+  }
+
   compareWithId(item1, item2): boolean {
     return item1 && item2 && item1.id === item2.id;
   }
 
-  bookTicket(id: number, departure: string, destination: string, departureDay: string, departureTime: string): void {
+  resetSearchInput(): void {
+    this.departure = '';
+    this.destination = '';
+    this.departureDay = '';
+    this.departureTime = '';
+  }
+
+  searchByMore():void{
+    this.curPage = 1;
+    this.getAllTicketPaging();
+  }
+
+  updateTicket(id: number, departure: string, destination: string, departureDay: string, departureTime: string, amount:number): void {
     Swal.fire({
       title: 'Đặt vé',
       // text: 'Học sinh: ' + name + ' /n ' + ' tuổi ' + age,
       // // icon: 'info',
       html: 'Bạn có chắc muốn đặt vé từ ' + departure + ' đến ' + destination + ' vào ' + departureTime + ' ngay ' + departureDay,
-      showConfirmButton: false,
+      showConfirmButton: true,
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      // confirmButtonText: 'Có, tôi muốn xóa!',
+      confirmButtonText: 'Có!',
       cancelButtonText: 'Đóng'
     }).then((result) => {
       if (result.isConfirmed) {
@@ -82,7 +104,6 @@ export class TicketListComponent implements OnInit {
             // showConfirmButton: false,
             timer: 1000
           });
-
           // this.curPage = 1;
           // this.getAllStudentPaging();
         }, error => {

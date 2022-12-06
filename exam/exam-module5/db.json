@@ -27,7 +27,6 @@
         "ticketSellName": "Nhà xe Phương Trang"
       }
     },
-
     {
       "id": 2,
       "departure": "Đà Nẵng",
@@ -53,6 +52,97 @@
         "id": 3,
         "ticketSellName": "Nhà xe Trung Tín"
       }
+    },
+    {
+      "id": 4,
+      "departure": "Đà Nẵng",
+      "destination": "Hạ Long",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 5,
+      "departure": "Đà Nẵng",
+      "destination": "Ninh Bình",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 6,
+      "departure": "Đà Nẵng",
+      "destination": "Nam Định",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 7,
+      "departure": "Hà Nội",
+      "destination": "Yên Bái",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 8,
+      "departure": "Hà Nội",
+      "destination": "Đà Nẵng",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "id": 9,
+      "departure": "Hà Nội",
+      "destination": "Ái Nghĩa",
+      "departureDay": "09/10/2021",
+      "departureTime": "07:40",
+      "ticketPrice": 4500000,
+      "amount": 15,
+      "ticketSell": {
+        "id": 3,
+        "ticketSellName": "Nhà xe Trung Tín"
+      }
+    },
+    {
+      "departure": "Đà Nẵng",
+      "destination": "An Lỗ",
+      "departureDay": "2022-12-06",
+      "departureTime": "11:14",
+      "amount": 10,
+      "ticketPrice": 100000,
+      "ticketSell": {
+        "id": 1,
+        "ticketSellName": "Nhà xe Phương Trang"
+      },
+      "id": 10
     }
   ]
 }

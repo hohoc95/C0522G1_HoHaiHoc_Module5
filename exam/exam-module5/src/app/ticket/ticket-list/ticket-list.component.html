@@ -9,6 +9,25 @@
           <span class="text-light"> Thêm vé</span>
         </button>
       </a>
+      <div class="d-flex my-2" role="search">
+        <input class="form-control me-2" type="text" placeholder="Điểm đi..." aria-label="Search"
+               [(ngModel)]="departure">
+
+        <input class="form-control me-2" type="text" placeholder="Điểm đến..." aria-label="Search"
+               [(ngModel)]="destination">
+
+        <input class="form-control me-2" type="date" placeholder="Ngày khởi hành..." aria-label="Search"
+               [(ngModel)]="departureDay">
+
+        <input class="form-control me-2" type="date" placeholder="Giờ khởi hành..." aria-label="Search"
+               [(ngModel)]="departureTime">
+
+        <button class="btn btn-light btn-outline-warning me-2" (click)="resetSearchInput()">
+          <i class="fa-solid fa-xmark"></i></button>
+
+        <button class="btn btn-light btn-outline-primary" (click)="searchByMore()">
+          <i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
 
     </div>
   </nav>
@@ -30,25 +49,22 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let item of vexeListPaging; index as i">
+    <tr *ngFor="let item of ticketListPaging; index as i">
       <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>
-      <td>{{item.diemDi| titlecase}}</td>
-      <!--      <td>{{item.studentGender}}</td>-->
+      <td>{{item.departure| titlecase}}</td>
 
-      <td>{{item.diemDen}}</td>
-      <td>{{item.giaVe}}</td>
-      <td>{{item.giaVe}}</td>
-      <!--      <td>{{item.studentPoint}}</td>-->
-      <td>{{item.ngayKhoiHanh}}</td>
-      <td>{{item.gioKhoiHanh}}</td>
+      <td>{{item.destination}}</td>
+      <td>{{item.ticketPrice}}</td>
+      <td>{{item.departureDay}}</td>
+      <td>{{item.departureTime}}</td>
 
-      <td>{{item.nhaXe.tenNhaXe}}</td>
-      <td>{{item.soLuong}}</td>
+      <td>{{item.ticketSell.ticketSellName}}</td>
+      <td>{{item.amount}}</td>
 
 
       <td class="text-center">
         <button class="btn btn-info btn-outline-secondary btn-sm"
-                (click)="datve(item.id, item.diemDi, item.diemDen, item.ngayKhoiHanh, item.gioKhoiHanh)">Đặt vé
+                (click)="updateTicket(item.id, item.departure, item.destination, item.departureDay, item.departureTime)">Đặt vé
           <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
           <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
         </button>
