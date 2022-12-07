@@ -7,12 +7,14 @@ import { TicketListComponent } from './ticket/ticket-list/ticket-list.component'
 import { TicketCreateComponent } from './ticket/ticket-create/ticket-create.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { TicketEditComponent } from './ticket/ticket-edit/ticket-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketListComponent,
-    TicketCreateComponent
+    TicketCreateComponent,
+    TicketEditComponent
   ],
     imports: [
         BrowserModule,
