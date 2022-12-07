@@ -1,0 +1,121 @@
+<div class="container-fluid">
+<div class="row logo">
+  <div class="col-lg-1">
+  </div>
+  <div style="margin-top: 15px" class="col-lg-2">
+    <img src="/assets/logo_chính-removebg-preview.png" width="200" height="auto">
+  </div>
+  <div style="margin-top: 33px" class="col-lg-4">
+    <div class="input-group">
+      <input type="search" class="form-control shadow" placeholder="Hôm nay bạn muốn tìm gì tại Hwatch?"/>
+      <button type="button" class="btn btn-danger shadow">Tìm</button>
+    </div>
+  </div>
+  <div class="col-lg-1">
+
+  </div>
+  <div style="margin-top: 33px" class="col-lg-2">
+    <span style="color: red"><a routerLink="/cart" class="navbar-brand"><i class="fa-solid fa-cart-shopping"
+                                                                style="font-size: 40px; color: crimson"></i></a>GIỎ HÀNG</span>
+  </div>
+<!--  <div class="col-lg-1">-->
+
+<!--  </div>-->
+<!--  <div class="col-lg-2">-->
+<!--    <button class="shadow" id="login" onclick="document.getElementById('id01').style.display='block'" style="width:auto">Đăng nhập</button>-->
+<!--  </div>-->
+  <div style="margin-top: 38px" class="col-lg-2">
+<!--    <ul style="list-style: none">-->
+<!--    <li class="nav-item dropdown">-->
+<!--      <a class="nav-link dropdown-toggle" role="button"-->
+<!--         data-bs-toggle="dropdown" aria-expanded="false" style="color: #21a117">-->
+<!--        <span><i class="fas fa-user fa-lg" style="height: 20px"></i> Đăng nhập</span>-->
+<!--&lt;!&ndash;        <span><i class="fas fa-user-check fa-lg" style="height: 20px"></i></span>&ndash;&gt;-->
+<!--      </a>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a class="dropdown-item" routerLink="/security/sign-up"><i class="fas fa-user-plus"></i> &nbsp; Đăng Kí</a></li>-->
+<!--        <li><a class="dropdown-item" routerLink="/login/login"><i class="fas fa-user"></i> &nbsp; Đăng Nhập</a>-->
+<!--        </li>-->
+<!--        <li><a class="dropdown-item" routerLink="/customer/create"><i class="fas fa-user-cog"></i> &nbsp; Thông Tin Tài Khoản</a></li>-->
+<!--        <li><a  class="dropdown-item" style="color: #F44336" routerLink=""><i-->
+<!--          class="fas fa-user-times"></i> &nbsp;-->
+<!--          Đăng Xuất</a></li>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--    </ul>-->
+    <a routerLink="/login" id="test" aria-expanded="false" style="color: #21a117; text-decoration: none">
+      <span>
+        <i class="fas fa-user fa-lg" style="height: 20px "></i>
+        Đăng nhập
+      </span>
+      <!--        <span><i class="fas fa-user-check fa-lg" style="height: 20px"></i></span>-->
+    </a>
+  </div>
+</div>
+
+
+
+<div style="background-color: #0C6154; height: 60px" class="row navbar">
+  <div class="col-lg-12">
+    <nav class="navbar navbar-expand-lg nav-header">
+      <div style="margin: auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll" style="text-align: center">
+            <li class="nav-item mx-5">
+              <a style="color: white" class="nav-link" routerLink="/">
+                <i class="fa-solid fa-house-user"></i> Trang chủ</a>
+            </li>
+            <li class="nav-item dropdown mx-5">
+              <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <i class="fa-brands fa-product-hunt"></i> Sản phẩm
+              </a>
+              <ul class="dropdown-menu dropdown-menu-danger">
+                <li><a class="dropdown-item" routerLink="/moviePlay">Đồng hồ nam</a></li>
+                <li><a class="dropdown-item" routerLink="/moviePremiere">Đồng hồ nữ</a></li>
+<!--                <li><a class="dropdown-item" routerLink="/moviePremiere">Vật dụng khác</a></li>-->
+              </ul>
+            </li>
+<!--            <li class="nav-item dropdown mx-5">-->
+<!--              <a style="color: white" class="nav-link colorA" routerLink="/employee/list">-->
+<!--                <i class="fa-solid fa-list-check"></i>-->
+<!--                Thương hiệu-->
+<!--              </a>-->
+<!--              <ul class="dropdown-menu dropdown-menu-danger">-->
+<!--                <li><a class="dropdown-item" routerLink="/moviePlay">Seiko</a></li>-->
+<!--                <li><a class="dropdown-item" routerLink="/moviePremiere">Orient</a></li>-->
+<!--                <li><a class="dropdown-item" routerLink="/moviePremiere">Casio</a></li>-->
+<!--                <li><a class="dropdown-item" routerLink="/moviePremiere">Tissot</a></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+
+            <li class="nav-item dropdown mx-5">
+              <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <i class="fa-solid fa-list-check"></i> Thương hiệu
+              </a>
+              <ul class="dropdown-menu dropdown-menu-danger">
+                <li><a class="dropdown-item" routerLink="/moviePlay">Đồng hồ Seiko</a></li>
+                <li><a class="dropdown-item" routerLink="/moviePremiere">Đồng hồ Orient</a></li>
+                <li><a class="dropdown-item" routerLink="/moviePremiere">Đồng hồ Casio</a></li>
+                <li><a class="dropdown-item" routerLink="/moviePremiere">Đồng hồ Tissot</a></li>
+                <li><a class="dropdown-item" routerLink="/moviePremiere">Đồng hồ Citizen</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item mx-5">
+              <a style="color: white" class="nav-link colorA" routerLink="/customer/list"><i
+                class="fa fa-user-secret"></i> Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+</div>

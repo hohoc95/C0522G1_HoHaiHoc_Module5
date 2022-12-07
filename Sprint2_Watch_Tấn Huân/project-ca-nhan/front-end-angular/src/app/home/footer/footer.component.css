@@ -1,0 +1,24 @@
+h3 {
+  color: white;
+}
+span {
+  color: white;
+  font-size: 14px;
+}
+p{
+  color: white;
+  font-size: 14px;
+}
+.footer{
+  height: 400px;
+}
+.footer1{
+  border-top: 0.5px solid snow;
+  height: 80px;
+}
+.column{
+  margin-top: 40px;
+}
+.row {
+  background-color: #0C6154;
+}

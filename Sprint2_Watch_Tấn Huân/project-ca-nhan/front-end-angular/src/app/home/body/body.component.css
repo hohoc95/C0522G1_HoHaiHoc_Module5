@@ -1,0 +1,43 @@
+.two{
+
+}
+
+.our_room {
+  background-color: #f4f5f7;
+  padding: 60px 0 30px 0;
+  margin-top: 90px;
+}
+
+.our_room .titlepage {
+  text-align: center;
+}
+
+.our_room .titlepage p {
+  color: #121212;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.our_room .room {
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: 30px;
+  transition: ease-in all 0.5s;
+}
+
+.room_img {
+  overflow: hidden;
+}
+
+.room_img figure {
+  margin: 0;
+}
+
+.room_img figure img {
+  width: 100%;
+  transition: all .5s;
+}
+
+.room_img figure img:hover {
+  transform: scale(1.2);
+}
