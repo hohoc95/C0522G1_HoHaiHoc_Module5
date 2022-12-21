@@ -60,6 +60,6 @@ export class TicketService {
   }
 
   updateTicket(id:number, amount:number): Observable<Ticket>{
-    return this.httpClient.patch<Ticket>(this.API_URL + 'ticket/'+ id,(amount -1) )
+    return this.httpClient.patch<Ticket>(this.API_URL + 'ticket/'+ id,amount )
   }
 }

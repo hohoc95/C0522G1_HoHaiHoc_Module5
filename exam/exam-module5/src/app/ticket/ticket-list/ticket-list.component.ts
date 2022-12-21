@@ -81,7 +81,7 @@ export class TicketListComponent implements OnInit {
     this.getAllTicketPaging();
   }
 
-  updateTicket(id: number, departure: string, destination: string, departureDay: string, departureTime: string, amount:number): void {
+  bookTicket(id: number, departure: string, destination: string, departureDay: string, departureTime: string, amount:number): void {
     Swal.fire({
       title: 'Đặt vé',
       // text: 'Học sinh: ' + name + ' /n ' + ' tuổi ' + age,
