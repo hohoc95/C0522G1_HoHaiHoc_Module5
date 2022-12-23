@@ -7,12 +7,12 @@ var fibonacci = function (num) {
     }
     return fibonacci(num - 1) + fibonacci(num - 2);
 };
-var sums = 0;
+var sum = 0;
 var size = 3;
 var arrr = [];
 for (var i = 0; i < size; i++) {
     arrr.push(fibonacci(i));
-    sums += fibonacci(i);
+    sum += fibonacci(i);
 }
 console.log("Dãy fibonacci: " + arrr);
-console.log("Tổng " + size + " số fibonacci: " + sums);
+console.log("Tổng " + size + " số fibonacci: " + sum);
