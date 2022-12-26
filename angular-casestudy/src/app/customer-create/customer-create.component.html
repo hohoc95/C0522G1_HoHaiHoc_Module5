@@ -1,0 +1,75 @@
+<div class="row" id="form">
+  <h2>Thêm Mới Khách Hàng</h2>
+  <p>
+    <a href="list.html">Quay Lại Danh Sách Khách Hàng</a>
+  </p>
+  <form action="@{/customer/save}" object="${customerDto}" method="post">
+    <div>
+      <label><b>Name</b></label>
+      <input type="text" field="*{customerName}"/>
+      <p style="color: red" if="${#fields.hasErrors('customerName')}"
+         errors="*{customerName}"></p>
+    </div>
+
+    <div>
+      <label><b>Birthday</b>Birthday</label>
+      <input type="date" field="*{birthday}"/>
+      <p style="color: red" if="${#fields.hasErrors('birthday')}"
+         errors="*{birthday}"></p>
+    </div>
+
+    <div class="mt-3 mb-3">
+      <label><b>Gender</b></label>
+      <div class="d-flex">
+        <label class="d-block me-4" style="color: black">
+          <input type="radio" field="*{gender}" value="1"/>Male
+        </label>
+        <label class="d-block me-4" style="color: black">
+          <input type="radio" field="*{gender}" value="0"/>Female
+        </label>
+        <label class="d-block" style="color: black">
+          <input type="radio" field="*{gender}" value="2"/>LGBT
+        </label>
+        <p style="color: red" errors="*{gender}"
+           if="${#fields.hasErrors('gender')}"></p>
+      </div>
+    </div>
+
+    <div>
+      <label><b>ID Card</b></label>
+      <input type="text" field="*{idCard}"/>
+      <p style="color: red" if="${#fields.hasErrors('idCard')}"
+         errors="*{idCard}"></p>
+    </div>
+
+    <div>
+      <label><b>Phone</b></label>
+      <input type="text" field="*{phone}"/>
+      <p style="color: red" if="${#fields.hasErrors('phone')}"
+         errors="*{phone}"></p>
+    </div>
+
+    <div>
+      <label><b>Email</b></label>
+      <input type="email" field="*{email}"/>
+      <p style="color: red" if="${#fields.hasErrors('email')}"
+         errors="*{email}"></p>
+    </div>
+
+    <div>
+      <label><b>Address</b></label>
+      <input type="text" field="*{address}"/>
+      <p style="color: red" if="${#fields.hasErrors('address')}"
+         errors="*{address}"></p>
+    </div>
+
+    <div>
+      <label><b>Customer Type Name</b></label>
+      <select field="*{customerType}">
+        <option each="items: ${customerTypes}" text="${items.customerTypeName}"
+                value="${items.customerTypeId}"></option>
+      </select>
+    </div>
+    <input type="submit" value="Save"/>
+  </form>
+</div>

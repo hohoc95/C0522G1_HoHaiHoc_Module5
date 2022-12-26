@@ -1,0 +1,74 @@
+<!--<p>service-edit works!</p>-->
+<div class="row" id="form">
+  <h2>Update Facility</h2>
+  <p>
+    <a href="list.html">Back to facility list</a>
+  </p>
+
+  <form action="@{/facility/update}" object="${facility}" method="post">
+    <div>
+      <input type="hidden" field="*{id}"/>
+    </div>
+    <div>
+      <label>Name</label>
+      <input type="text" field="*{name}"/>
+      <!--            <p style="color: red" th:if="${#fields.hasErrors('name')}"-->
+      <!--               th:errors="*{name}"></p>-->
+    </div>
+    <div>
+      <label>Area</label>
+      <input type="text" field="*{area}"/>
+    </div>
+    <div>
+      <label>Cost</label>
+      <input type="text" field="*{cost}"/>
+      <!--            <p style="color: red" th:if="${#fields.hasErrors('cost')}"-->
+      <!--               th:errors="*{cost}"></p>-->
+    </div>
+    <div>
+      <label>Max People</label>
+      <input type="text" field="*{maxPeople}"/>
+      <!--            <p style="color: red" th:if="${#fields.hasErrors('maxPeople')}"-->
+      <!--               th:errors="*{maxPeople}"></p>-->
+    </div>
+    <div id="standardRoom">
+      <label>Standard Room</label>
+      <input type="text" field="*{standardRoom}"/>
+      <!--            <p style="color: red" th:if="${#fields.hasErrors('standardRoom')}"-->
+      <!--               th:errors="*{standardRoom}"></p>-->
+    </div>
+    <div id="poolArea">
+      <label>Pool Area</label>
+      <input type="text" field="*{poolArea}"/>
+    </div>
+    <div id="description">
+      <label>Description</label>
+      <input type="text" field="*{descriptionOtherConvenience}"/>
+    </div>
+    <div id="numberOfFloor">
+      <label>Number Of Floor</label>
+      <input type="text" field="*{numberOfFloors}"/>
+    </div>
+    <div id="facilityFree">
+      <label>Facility Free</label>
+      <input type="text" field="*{facilityFree}"/>
+    </div>
+    <div>
+      <label>Rent Name: </label>
+      <select field="*{rentType}">
+        <option value="${''}">Rent Type</option>
+        <option each="rent: ${rentTypes}" text="${rent.name}"
+                value="${rent.id}"></option>
+      </select>
+    </div>
+    <div>
+      <label>Facility Name</label>
+      <select field="*{facilityType}">
+        <option value="${''}">Facility Type</option>
+        <option each="item: ${facilityTypes}" text="${item.name}"
+                value="${item.id}"></option>
+      </select>
+    </div>
+    <input type="submit" value="Edit"/>
+  </form>
+</div>

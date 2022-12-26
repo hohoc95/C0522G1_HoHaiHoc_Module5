@@ -1,0 +1,37 @@
+#header{
+  height: 100px;
+}
+#one{
+  background-color: cornsilk;
+  border-top: 5px solid burlywood;
+}
+img{
+  width : 280px;
+  height:80px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+.header-p{
+  margin-top: 20px;
+  font-family: "Nirmala UI";
+}
+svg{
+  width: 50px;
+  height: 40px;
+}
+#nava_div{
+  float: right;
+}
+a{
+  text-decoration: none;
+}
+#nava_footer{
+  margin-right: 20px;
+}
+marquee{
+  font-family:"Nirmala UI";
+}
+#h2_footer{
+  color: white;
+  font-family:"Nirmala UI";
+}

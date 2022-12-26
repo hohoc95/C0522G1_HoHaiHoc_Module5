@@ -1,0 +1,31 @@
+<h2 style="text-align: center">Danh Sách Khách Hàng</h2>
+<table class="table table-striped table-bordered" id="customerTable">
+  <thead>
+  <tr class="text-center bg-warning bg-opacity-50">
+    <th>Serial</th>
+    <th>Name</th>
+    <th>Id card</th>
+    <th>Phone number</th>
+    <th>Customer type</th>
+    <th>Gender</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customerObj of this.customerList;index as i">
+    <td>{{i + 1}}</td>
+    <td>{{customerObj.name}}</td>
+    <td>{{customerObj.idCarrd}}</td>
+    <td>{{customerObj.phone}}</td>
+    <td>{{customerObj.customertype}}</td>
+    <td>
+      <span *ngIf="customerObj.gender == 1">Male</span>
+      <span *ngIf="customerObj.gender == 0">Female</span>
+      <span *ngIf="customerObj.gender == 2">LGBT</span>
+    </td>
+    <td><a href="#">update</a></td>
+    <td><a href="#">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
