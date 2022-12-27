@@ -1,27 +1,179 @@
-
-  <div class="row">
-    <header id="header">
-      <div id="one" class="row">
-        <div class="col-sm-3 col-lg-3 col-md-3 head">
-          <img  src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" width="280px" height="80px">
-        </div>
-        <div class="col-sm-3 col-lg-3 col-md-3 head">
-        </div>
-        <div class="col-sm-3 col-lg-3 col-md-3 head ">
-          <p class="header-p"><i class="fa-solid fa-location-dot"></i>
-            103 - 105 Vo Nguyen Giap Street,<br>
-            Khue My Ward, Ngu Hanh Son District,<br>
-            Danang City, Vietnam<br>
-            7,0 km from Danang Airport
-          </p>
-        </div>
-        <div class="col-sm-3 col-lg-3 col-md-3 head ">
-          <p class="header-p"><i class="fa-solid fa-phone"></i>84-236-3847
-            333/888</p>
-          <p><i class="fa-solid fa-envelope-circle-check"></i>reservation@furamavietnam.com
-          </p>
-        </div>
+<!--
+<div class="container-fluid ">
+  <header class="row " id="header">
+    <div id="img" class="col-2">
+      <img src="https://www.furama.com/images/LOGOFHI_4C_Reverse.png" height="50px" alt="">
+    </div>
+    <div class="col-lg-7">
+      <img src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+           height="100" alt="">
+    </div>
+  </header>
+</div>
+<div class="container-fluid sticky">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light row">
+    <div class="container-fluid text-center" id="home">
+      <a class="navbar-brand " href="#">HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Customer
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                     routerLink="/customer">Customer
+                List</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/customer/create">Add
+                new Customer</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Employee
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Employee List</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Add new Employee</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Service
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                     routerLink="/facility">Facility List</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/facility/create">Add
+                new Facility</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Contract
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                     routerLink="/contract">Contract
+                List</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/contract/create">Add new
+                Contract</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </nav>
+</div>
+
+-->
+
+<header >
+  <div class="container-fluid bg-gray-500 d-flex headerFootCSS" style="height: 100px">
+    <img class="h-100 p-4" src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" alt="">
+    <img class="ms-5 ps-5"
+         src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+         alt="">
+
+    <div class="container-fluid text-end my-4 me-4">
+    </div>
   </div>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid mx-5">
+      <a class="navbar-brand font-weight-bold" routerLink="">
+        <i class="fa-solid fa-house-chimney h5 mx-1"></i> Trang chủ
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Khách hàng</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                     routerLink="/customer/list">Customer
+                List</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/customer/create">Add
+                new Customer</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Nhân viên</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/employee/list">
+                Danh sách nhân viên <i class="fa-solid fa-person-circle-question"></i></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/employee/create">
+                Thêm khách hàng mới <i class="fa-solid fa-user-plus"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Dịch vụ</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/facility/list">
+                Danh sách dịch vụ <i class="fa-solid fa-house"></i></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/facility/create">
+                Thêm dịch vụ mới <i class="fa-solid fa-cart-plus"></i></a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Hợp đồng</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/contract/list">
+                Danh sách hợp đồng <i class="fa-solid fa-file-signature"></i></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/contract/create">
+                Thêm hợp đồng mới <i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
