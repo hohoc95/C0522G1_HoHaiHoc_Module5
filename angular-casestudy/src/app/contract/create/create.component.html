@@ -1,70 +1,92 @@
-<div class="mx-5 px-5 pt-3">
-  <h2 class="text-center fw-bold">Add new Contract</h2>
-
-  <p class="text-center mt-3"><a href="/"><i class="fa-solid fa-house-chimney h5 mx-1"></i> Back to HOME</a></p>
+<div class="mx-5 px-5 pt-3 pb-5">
+  <h2 class="text-center fw-bold text-light">THÊM MỚI HỢP ĐỒNG</h2>
 
   <p class="text-center">
-    <a href="/contract"><i class="fa-solid fa-backward"></i> Back to Contract list</a>
+    <a routerLink="/contract/list">
+      <i class="fa-solid fa-backward"></i> Quay lại trang danh sách hợp đồng</a>
   </p>
 
   <div class="d-flex justify-content-center">
-
-    <form class="w-50 border border-2 border-success p-3 bg-warning rounded" action="/contract?action=create"
-          method="post">
+    <form class="w-50 border border-2 border-success p-3 rounded formCSS"
+          [formGroup]="contractFormGroup" (ngSubmit)="submit()">
       <div class="form-group">
-        <label for="startDay" class="h6">Start day:</label>
-        <input type="date" id="startDay" class="form-control" name="startDay" min="${minAge}" onchange="changeForm(this)">
-      </div>
-
-      <div class="mt-3 form-group">
-        <label for="endDay" class="h6">End day:</label>
-        <input type="date" id="endDay" class="form-control" name="endDay">
-      </div>
-
-      <div class="mt-3 form-group">
-        <label for="deposit" class="h6">Deposit:</label>
-        <div class="input-group">
-          <input type="text" id="deposit" class="form-control" placeholder="Input deposit" name="deposit"
-                 required pattern="^[1-9]\d*[.]?\d+$" title="Lương, Giá, Tiền đặt cọc phải là số dương.">
-          <span class="input-group-text"><i class="fa-solid fa-money-bill-wave"></i></span>
+        <label class="h6" for="facility">Tên dịch vụ:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="contractFormGroup.controls.facility.hasError('required') &&
+                      contractFormGroup.controls.facility.touched">
+          Vui lòng chọn dịch vụ!
         </div>
-      </div>
-
-      <div class="mt-3 form-group">
-        <label class="h6" for="employee">Employee:</label>
         <div class="input-group">
-          <input id="employee" class="form-control" name="employee">
-          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
-        </div>
-      </div>
-
-      <div class="mt-3 form-group">
-        <label class="h6" for="customer">Customer:</label>
-        <div class="input-group">
-          <input id="customer" class="form-control" name="customer">
-          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
-        </div>
-      </div>
-
-      <div class="mt-3 form-group">
-        <label class="h6" for="facility">Facility:</label>
-        <div class="input-group">
-          <input id="facility" class="form-control" name="facility" onchange="changeCost(this)">
+          <select id="facility" class="form-select" formControlName="facility">
+            <option value="" disabled>Chọn dịch vụ..</option>
+            <option *ngFor="let item of facilityList" [ngValue]="item">{{item.facilityName}}</option>
+          </select>
           <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
         </div>
       </div>
 
       <div class="mt-3 form-group">
-        <label for="totalMoney" class="h6">Total money:</label>
+        <label class="h6" for="customer">Tên khách hàng:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="contractFormGroup.controls.customer.hasError('required') &&
+                      contractFormGroup.controls.customer.touched">
+          Vui lòng chọn khách hàng!
+        </div>
         <div class="input-group">
-          <input type="text" id="totalMoney" class="form-control" name="totalMoney" >
-          <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
+          <select id="customer" class="form-select" formControlName="customer">
+            <option value="" disabled>Chọn khách hàng..</option>
+            <option *ngFor="let item of customerList" [ngValue]="item">{{item.customerName}}</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+
+      <div formGroupName="dateFormGroup">
+        <div class="mt-3 form-group">
+          <label for="startDate" class="h6">Ngày bắt đầu:</label>
+          <div class="alert alert-danger" role="alert"
+               *ngIf="contractFormGroup.get('dateFormGroup').hasError('invalidStartDate', 'startDate')
+               && contractFormGroup.get('dateFormGroup').get('startDate').touched">
+            Cái gì thuộc về quá khứ hãy cho nó qua đi!
+          </div>
+          <input type="date" id="startDate" class="form-control" formControlName="startDate"
+                 [min]="curDate"/>
+        </div>
+
+        <div class="mt-3 form-group">
+          <label for="endDate" class="h6">Ngày kết thúc:</label>
+          <div class="alert alert-danger" role="alert"
+               *ngIf="contractFormGroup.controls.dateFormGroup.hasError('invalidEndDate')
+           && contractFormGroup.controls.dateFormGroup.dirty">
+            Ngày kết thúc hợp đồng không nhỏ hơn ngày làm hợp đồng!
+          </div>
+          <input type="date" id="endDate" class="form-control" formControlName="endDate" [min]="curDate"/>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="deposit" class="h6">Tiền đặt cọc (VNĐ):</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="contractFormGroup.controls.deposit.hasError('required') &&
+                      contractFormGroup.controls.deposit.touched">
+          Tiền đặt cọc không được để trống!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="contractFormGroup.controls.deposit.hasError('pattern') &&
+                      contractFormGroup.controls.deposit.touched">
+          Tiền đặt cọc phải là số nguyên không nhỏ hơn 0!
+        </div>
+        <div class="input-group">
+          <input type="number" id="deposit" class="form-control" placeholder="Nhập tiền đặt cọc..."
+                 formControlName="deposit"/>
+          <span class="input-group-text"><i class="fa-solid fa-money-bill-wave"></i></span>
         </div>
       </div>
 
       <div class="mt-3 text-center">
-        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
-          -- Save <i class="fa-solid fa-floppy-disk"></i> --
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                [disabled]="contractFormGroup.invalid">
+          -- Lưu <i class="fa-solid fa-floppy-disk"></i> --
         </button>
       </div>
     </form>

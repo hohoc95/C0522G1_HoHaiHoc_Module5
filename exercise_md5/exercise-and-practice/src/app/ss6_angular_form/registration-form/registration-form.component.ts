@@ -1,0 +1,106 @@
+import {Component, OnInit} from '@angular/core';
+import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+
+export const reConfirmPass: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const passWord = control.get('password');
+  const confirmPassword = control.get('confirmPassword');
+
+  // tslint:disable-next-line:triple-equals
+  if (passWord && confirmPassword && passWord.touched && passWord.value != confirmPassword.value) {
+    return {reConfirmPass: true};
+  } else {
+    return null;
+  }
+};
+
+@Component({
+  selector: 'app-registration-form',
+  templateUrl: './registration-form.component.html',
+  styleUrls: ['./registration-form.component.css']
+})
+export class RegistrationFormComponent implements OnInit {
+  title = 'AngularForm';
+
+  // tạo đối tượng rfForm
+  rfForm: FormGroup;
+
+  // tslint:disable-next-line:variable-name
+  constructor(private _formBuilder: FormBuilder) {
+  }
+
+  ngOnInit(): void {
+    this.rfForm = this._formBuilder.group({
+      name: [, [
+        Validators.required,
+        Validators.minLength(5)
+      ]
+      ],
+
+      email: [,
+        [
+          Validators.required,
+          Validators.email
+        ]
+      ],
+
+      password: [,
+        [
+          Validators.required,
+          Validators.minLength(6)
+        ]
+      ],
+
+      confirmPassword: [,
+        [
+          Validators.required,
+          Validators.minLength(6)
+        ]
+      ],
+
+      country: [,
+        [
+          Validators.required,
+          // Validators.minLength(5)
+        ]
+      ],
+
+      age: [,
+        [
+          Validators.required,
+          Validators.min(19)
+        ]
+      ],
+      gender: [,
+        [
+          Validators.required,
+        ]
+      ],
+
+      phone: [,
+        [
+          Validators.required,
+          Validators.pattern(/^\+84\d{9,10}$/),
+          Validators.minLength(8),
+          Validators.maxLength(12)
+        ]
+      ],
+
+    }, {validators: reConfirmPass});
+  }
+
+  checkConfirmPassword(abstractControl: AbstractControl): any {
+    const formPassword = abstractControl.value;
+    return formPassword.password === formPassword.confirmPassword ? null : {passwordNotSame: true};
+  }
+
+  getRegisterInfo(): void {
+    console.log('Thông tin đăng kí: ');
+    console.log(this.rfForm.value);
+  }
+
+  onSubmit() {
+    if (this.rfForm.valid) {
+      console.log(this.rfForm.value);
+    }
+  }
+}

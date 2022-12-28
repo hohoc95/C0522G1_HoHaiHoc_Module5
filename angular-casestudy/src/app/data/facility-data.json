@@ -1,0 +1,55 @@
+{
+  "facilityType": [
+    {
+      "id": 1,
+      "facilityTypeName": "Villa"
+    },
+    {
+      "id": 2,
+      "facilityTypeName": "House"
+    },
+    {
+      "id": 3,
+      "facilityTypeName": "Room"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "rentTypeName": "Năm"
+    },
+    {
+      "id": 2,
+      "rentTypeName": "Tháng"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "Ngày"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "Giờ"
+    }
+  ],
+  "facility": {
+    "id": 1,
+    "facilityName": "Villa Beach Front",
+    "facilityArea": "25000",
+    "rentCost": "10000000",
+    "maxPeople": "10",
+    "standardRoom": "vip",
+    "descriptionOtherConvenience": "Có hồ bơi",
+    "poolArea": "500",
+    "numberOfFloors": "4",
+    "facilityFree": ".....",
+    "facilityImage": ".....",
+    "rentType": {
+      "id": 1,
+      "rentTypeName": "Năm"
+    },
+    "facilityType": {
+      "id": 1,
+      "facilityTypeName": "Villa"
+    }
+  }
+}

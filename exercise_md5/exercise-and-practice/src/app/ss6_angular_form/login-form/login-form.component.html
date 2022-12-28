@@ -1,0 +1,35 @@
+<!--<p>login-form works!</p>-->
+<div class="container">
+  <h2>Registration form</h2>
+  <form [formGroup]="rfLogin" (ngSubmit)="onSubmit()" autocomplete="off">
+
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input formControlName="email" type="text" class="form-control"
+             [ngClass]="rfLogin.controls['email'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfLogin.controls['email'].hasError('required')
+        && rfLogin.controls['email'].touched">
+          Please provide a email!
+        </div>
+        <div *ngIf="rfLogin.controls['email'].hasError('email')">
+          Please input match format email!
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control"
+             [ngClass]="rfLogin.controls['password'].invalid ? 'is-invalid' : 'is-valid'">
+      <div class="invalid-feedback">
+        <div *ngIf="rfLogin.controls['password'].hasError('required')
+        && rfLogin.controls['password'].touched">
+          Please provide a password!
+        </div>
+        <div *ngIf="rfLogin.controls['password'].hasError('minlength')">
+          Please input min length > 6!
+        </div>
+      </div>
+    </div>

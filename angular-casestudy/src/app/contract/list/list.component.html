@@ -1,38 +1,63 @@
-<div class="p-3">
-  <h2 class="text-center fw-bold">CONTRACT LIST</h2>
+<div class="px-5">
+  <div class="p-3 px-5 mx-5">
+    <h2 class="text-center fw-bold text-light mt-3">DANH SÁCH HỢP ĐỒNG <i class="fa-solid fa-file-signature"></i></h2>
 
-  <p class="text-center mt-3"><a href="/"><i class="fa-solid fa-house-chimney h5 mx-1"></i> Back to HOME</a></p>
+    <nav class="navbar navbar-expand-lg py-0 my-0 pb-2">
+      <div class="container-fluid">
+        <a routerLink="/contract/create">
+          <button class="btn btn-primary btn-outline-secondary">
+            <span class="fa-solid fa-plus text-light h6 my-auto me-1"></span>
+            <span class="text-light"> Thêm mới hợp đồng</span>
+          </button>
+        </a>
+      </div>
+    </nav>
 
-  <nav class="navbar navbar-expand-lg py-0 my-0">
-    <div class="container-fluid">
-      <a href="/contract?action=create">
-        <button class="btn btn-success btn-outline-secondary btn-sm">
-          <span class="fa-solid fa-plus text-light h6 my-auto me-1"></span>
-          <span class="text-light"> Add new Contract</span>
-        </button>
-      </a>
-    </div>
-  </nav>
+    <table class="table table-light table-striped table-bordered" id="customerTable">
+      <thead>
+      <tr class="table-dark text-light">
+        <th class="text-center">STT <i class="fa-sharp fa-solid fa-bolt"></i></th>
+        <th class="text-center">Tên khách hàng <i class="fa-solid fa-person-circle-question"></i></th>
+        <th class="text-center">Tên dịch vụ <i class="fa-solid fa-house"></i></th>
+        <th class="text-center">Ngày làm hợp đồng <i class="fa-regular fa-calendar"></i></th>
+        <th class="text-center">Ngày kết thúc hợp đồng <i class="fa-regular fa-calendar"></i></th>
+        <th class="text-center">Tiền đặt cọc <i class="fa-solid fa-money-bill-wave"></i></th>
+        <th class="text-center">Tổng tiền <i class="fa-solid fa-dollar-sign"></i></th>
+      </tr>
+      </thead>
 
-  <table id="contractTable" class="table table-light table-striped table-bordered">
-    <thead>
-    <tr class="table-dark text-light">
-      <th class="text-center"><i class="fa-solid fa-dog"></i></th>
-      <th>Facility</th>
-      <th>Employee</th>
-      <th>Customer</th>
-      <th>Start day</th>
-      <th>End day</th>
-      <th>Deposit</th>
-      <th>Total money</th>
-      <th>Attach facility</th>
-    </tr>
-    </thead>
+      <tbody>
+      <tr *ngFor="let item of customerListPaging; index as i">
+        <td class="text-center">{{i + 1 + (curPage - 1) * 5 }}</td>
+        <td>{{item.customer.customerName}}</td>
+        <td>{{item.facility.facilityName}}</td>
+        <td class="text-center">{{item.startDate | date: "dd/MM/yyyy"}}</td>
+        <td class="text-center">{{item.endDate | date: "dd/MM/yyyy"}}</td>
+        <td>{{item.deposit | currency: "VND"}}</td>
+        <td>{{item.deposit + item.facility.rentCost | currency: "VND"}}</td>
+      </tr>
+      </tbody>
+    </table>
 
-  </table>
+    <nav aria-label="..." class="justify-content-center d-flex">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage <= 1">
+          <a class="page-link">&laquo;</a>
+        </li>
 
-  <script src="jquery/jquery-3.5.1.min.js"></script>
-  <script src="datatables/js/jquery.dataTables.min.js"></script>
-  <script src="datatables/js/dataTables.bootstrap4.min.js"></script>
+        <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"></a>
+        </li>
 
+        <li class="page-item">
+          <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage >= totalPage">
+          <a class="page-link">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
