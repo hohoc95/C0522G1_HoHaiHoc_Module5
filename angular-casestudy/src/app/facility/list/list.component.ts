@@ -41,6 +41,11 @@ export class ListComponent implements OnInit {
     }, () => {
       console.log('Hiển thị dịch vụ ở trang ' + this.curPage);
     });
+    this.getAllFacilityPaging();
+
+  }
+  getAllFacilityPaging() {
+
   }
 
   next(): void {
