@@ -12,23 +12,23 @@ const routes: Routes = [
   /*
   *  Dictionary - Từ điển
   * */
-  // {path: '', component: DictionaryPageComponent},
-  // {path: 'dictionary/detail/:word', component: DictionaryDetailComponent},
+  {path: '', component: DictionaryPageComponent},
+  {path: 'dictionary/detail/:word', component: DictionaryDetailComponent},
 
   /*
   *  Product management: Quản lý sản phẩm
   * */
-  {path: '', component: ProductListComponent},
-  {path: 'product/list', component: ProductListComponent},
-
-  // {path: '', component: ProductCreateComponent},
-  {path: 'product/create', component: ProductCreateComponent},
-
-  // {path: '', component: ProductEditComponent},
-  {path: 'product/edit/:id', component: ProductEditComponent},
-
-  // {path: '', component: ProductDeleteComponent},
-  {path: 'product/delete/:id', component: ProductDeleteComponent}
+  // {path: '', component: ProductListComponent},
+  // {path: 'product/list', component: ProductListComponent},
+  //
+  // // {path: '', component: ProductCreateComponent},
+  // {path: 'product/create', component: ProductCreateComponent},
+  //
+  // // {path: '', component: ProductEditComponent},
+  // {path: 'product/edit/:id', component: ProductEditComponent},
+  //
+  // // {path: '', component: ProductDeleteComponent},
+  // {path: 'product/delete/:id', component: ProductDeleteComponent}
 
 
 ];
