@@ -59,7 +59,7 @@ export class CreateComponent implements OnInit {
       Swal.fire({
         title: 'Thêm mới thành công!',
         text: 'Dịch vụ: ' + facility.facilityName,
-        imageUrl: facility.facilityImage,
+        imageUrl: 'http://imgarcade.com/1/mangekyou-sharingan-gif',
         imageHeight: 250,
         imageWidth: 400
       });

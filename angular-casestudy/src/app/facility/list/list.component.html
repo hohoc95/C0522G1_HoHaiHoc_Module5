@@ -1,6 +1,6 @@
 <div class="py-3 px-5">
   <div class="px-5">
-    <h2 class="text-center fw-bold text-light mt-3">DANH SÁCH DỊCH VỤ <i class="fa-solid fa-house"></i></h2>
+    <h2 class="text-center fw-bold mt-3">DANH SÁCH DỊCH VỤ <i class="fa-solid fa-house"></i></h2>
 
     <nav class="navbar navbar-expand-lg py-0 my-0">
       <div class="container-fluid">
@@ -20,36 +20,69 @@
       </div>
     </nav>
 
-    <div class="row">
-      <div class="col-sm-4 mb-4" *ngFor="let item of facilityListPaging">
-        <div class="card facilityCSS">
-          <img height="250px"
-               src="{{item.facilityImage}}"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{item.facilityName | uppercase}}</h5>
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <span class="card-text">Loại dịch vụ: {{item.facilityType.facilityTypeName | uppercase}}</span><br>
-                <span class="card-text">Diện tích: {{item.facilityArea}} m<sup>2</sup></span><br>
-                <span class="card-text">Chí phí thuê: {{item.rentCost | currency: "VND"}}</span>
-              </div>
-              <div class="col-sm-6">
-                <span class="card-text">Số người tối đa: {{item.maxPeople}}</span><br>
-                <span class="card-text">Kiểu thuê: {{item.rentType.rentTypeName}}</span>
-              </div>
-            </div>
-            <a routerLink="/facility/edit/{{item.id}}" class="me-2">
-              <button class="btn btn-warning btn-outline-secondary text-dark">Chỉnh sửa</button>
-            </a>
-            <button class="btn btn-danger btn-outline-secondary text-light"
-                    data-bs-toggle="modal" data-bs-target="#deleteFacility"
-                    (click)="getInfoFacilityDelete(item.facilityImage, item.facilityName, item.id)">Xóa
+    <table class="table table-light table-striped table-bordered" id="facilityTable">
+      <thead>
+      <tr class="table-dark text-light">
+        <th class="text-center">STT </th>
+        <th class="text-center">Tên dịch vụ</th>
+        <th class="text-center">Diện tích </th>
+        <th class="text-center">Chi phí thuê </th>
+        <th class="text-center">Số người tối đa </th>
+<!--        <th class="text-center">Tiêu chuẩn phòng </th>-->
+<!--        <th class="text-center">Mô tả tiện nghi khác </th>-->
+<!--        <th class="text-center">Diện tích hồ bơi </th>-->
+        <th class="text-center">Số tầng </th>
+<!--        <th class="text-center">Dịch vụ miễn phí đi kèm</th>-->
+        <th class="text-center">Loại dịch vụ</th>
+        <th class="text-center">Kiểu thuê</th>
+        <th class="text-center">Hình ảnh</th>
+        <th class="text-center">Chi tiết</th>
+        <th class="text-center">Sửa</th>
+        <th class="text-center">Xóa</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let item of facilityListPaging; index as i">
+        <td class="text-center">{{i + 1 + (curPage - 1) * 5 }}</td>
+        <td>{{item.facilityName | titlecase}}</td>
+        <td>{{item.facilityArea }}</td>
+        <td>{{item.rentCost }}</td>
+        <td>{{item.maxPeople }}</td>
+<!--        <td>{{item.standardRoom }}</td>-->
+<!--        <td>{{item.descriptionOtherConvenience }}</td>-->
+<!--        <td>{{item.poolArea }}</td>-->
+        <td>{{item.numberOfFloors }}</td>
+<!--        <td>{{item.facilityFree }}</td>-->
+        <td>{{item.rentType.rentTypeName }}</td>
+        <td>{{item.facilityType.facilityTypeName }}</td>
+        <td>{{item.facilityImage }}</td>
+        <td class="text-center">
+          <button class="btn btn-info btn-outline-secondary btn-sm"
+                  (click)="detailFacility(item.id, item.facilityName, item.descriptionOtherConvenience, item.poolArea, item.facilityFree, item.standardRoom)">
+            <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+            <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
+          </button>
+        </td>
+
+        <td class="text-center">
+          <a routerLink="/facility/edit/{{item.id}}">
+            <button class="btn btn-success btn-outline-secondary btn-sm">
+              <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
+          </a>
+        </td>
+
+        <td class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#deleteCustomer"
+                  class="btn btn-danger btn-outline-secondary btn-sm"
+                  (click)="deleteFacility(item.id, item.facilityName)">
+            <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+            <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
+          </button>
+        </td>
+      </tbody>
+    </table>
 
     <nav aria-label="..." class="justify-content-center d-flex">
       <ul class="pagination">
@@ -61,7 +94,7 @@
         </li>
 
         <li class="page-item"><a class="page-link disabled" href=""
-                                 [text]="curPage + ' / ' + totalPage"  *ngIf="curPage <= totalPage"></a>
+                                 [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
         </li>
 
         <li class="page-item">

@@ -1,5 +1,5 @@
 {
-  "facilityType": [
+  "facilityTypes": [
     {
       "id": 1,
       "facilityTypeName": "Villa"
@@ -13,7 +13,7 @@
       "facilityTypeName": "Room"
     }
   ],
-  "rentType": [
+  "rentTypes": [
     {
       "id": 1,
       "rentTypeName": "Năm"
@@ -31,25 +31,132 @@
       "rentTypeName": "Giờ"
     }
   ],
-  "facility": {
-    "id": 1,
-    "facilityName": "Villa Beach Front",
-    "facilityArea": "25000",
-    "rentCost": "10000000",
-    "maxPeople": "10",
-    "standardRoom": "vip",
-    "descriptionOtherConvenience": "Có hồ bơi",
-    "poolArea": "500",
-    "numberOfFloors": "4",
-    "facilityFree": ".....",
-    "facilityImage": ".....",
-    "rentType": {
+  "facilities": [
+    {
       "id": 1,
-      "rentTypeName": "Năm"
+      "facilityName": "Villa Beach Front",
+      "facilityArea": 25000,
+      "rentCost": "10000000",
+      "maxPeople": "10",
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": "500",
+      "numberOfFloors": "4",
+      "facilityFree": "Có phao vịt",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
     },
-    "facilityType": {
-      "id": 1,
-      "facilityTypeName": "Villa"
+    {
+      "id": 2,
+      "facilityName": "House Princess 01",
+      "facilityArea": 14000,
+      "rentCost": 5000000,
+      "maxPeople": 7,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": "Null",
+      "numberOfFloors": 3,
+      "facilityFree": "Null",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
+    },
+    {
+      "id": 3,
+      "facilityName": "Room Twin 01",
+      "facilityArea": "5000",
+      "rentCost": "1000000",
+      "maxPeople": "2",
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": "null",
+      "numberOfFloors": "null",
+      "facilityFree": "1 Xe máy 1 Xe đạp",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
+    },
+    {
+      "id": 4,
+      "facilityName": "Villa No Beach Front",
+      "facilityArea": "22000",
+      "rentCost": "9000000",
+      "maxPeople": "8",
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": "300",
+      "numberOfFloors": "3",
+      "facilityFree": "null",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
+    },
+    {
+      "id": 5,
+      "facilityName": "House Princess 02",
+      "facilityArea": "10000",
+      "rentCost": "4000000",
+      "maxPeople": "10",
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": "null",
+      "numberOfFloors": "2",
+      "facilityFree": "null",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
+    },
+    {
+      "id": 6,
+      "facilityName": "Room Twin 02",
+      "facilityArea": "3000",
+      "rentCost": "900000",
+      "maxPeople": "2",
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": "null",
+      "numberOfFloors": "null",
+      "facilityFree": "1 Xe máy",
+      "facilityImage": ".....",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      }
     }
-  }
+  ]
 }

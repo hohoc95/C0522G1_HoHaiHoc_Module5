@@ -30,6 +30,9 @@ export class FacilityService {
   deleteFacility(id: number): Observable<Facility> {
     return this.httpClient.delete<Facility>(this.API_URL + 'facilities/' + id);
   }
+  detailFacility(id: number): Observable<Facility> {
+    return this.httpClient.get<Facility>(this.API_URL + 'facilities/' + id);
+  }
 
   findAllFacilityType(): Observable<FacilityType[]> {
     return this.httpClient.get<FacilityType[]>(this.API_URL + 'facilityTypes');

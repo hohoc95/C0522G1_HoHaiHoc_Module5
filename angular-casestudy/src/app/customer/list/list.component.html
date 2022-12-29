@@ -30,15 +30,15 @@
   <table class="table table-light table-striped table-bordered" id="customerTable">
     <thead>
     <tr class="table-dark text-light">
-      <th class="text-center">STT <i class="fa-sharp fa-solid fa-bolt"></i></th>
-      <th class="text-center">Tên khách hàng <i class="fa-solid fa-person-circle-question"></i></th>
-      <th class="text-center">Ngày sinh <i class="fa-regular fa-calendar"></i></th>
-      <th class="text-center">Giới tính <i class="fa-solid fa-heart"></i></th>
-<!--      <th class="text-center">Số CMND/CCCD <i class="fa-solid fa-id-card"></i></th>-->
-      <th class="text-center">SĐT <i class="fa-solid fa-square-phone"></i></th>
-<!--      <th class="text-center">Địa chỉ <i class="fa-solid fa-map-location-dot"></i></th>-->
-<!--      <th class="text-center">Email <i class="fa-solid fa-envelope-circle-check"></i></th>-->
-      <th class="text-center">Loại khách <i class="fa-solid fa-ranking-star"></i></th>
+      <th class="text-center">STT </th>
+      <th class="text-center">Tên khách hàng </th>
+      <th class="text-center">Ngày sinh </th>
+      <th class="text-center">Giới tính </th>
+<!--      <th class="text-center">Số CMND/CCCD </th>-->
+      <th class="text-center">SĐT </th>
+<!--      <th class="text-center">Địa chỉ </th>-->
+<!--      <th class="text-center">Email</th>-->
+      <th class="text-center">Loại khách </th>
       <th class="text-center">Chi tiết</th>
       <th class="text-center">Sửa</th>
       <th class="text-center">Xóa</th>
@@ -60,17 +60,10 @@
 <!--      <td>{{item.customerAddress}}</td>-->
 <!--      <td>{{item.customerEmail}}</td>-->
       <td>{{item.customerType.customerTypeName}}</td>
-<!--      <td class="text-center">
-        <button data-bs-toggle="modal" data-bs-target="#deatailCustomer"
-                class="btn btn-info btn-outline-secondary btn-sm"
-                (click)="getInfoCustomerDetail(item.customerName, item.id)">
-          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>
-        </button>
-      </td>-->
 
       <td class="text-center">
         <button class="btn btn-info btn-outline-secondary btn-sm"
-                (click)="detailStudent(item.id, item.customerName, item.customerType.customerTypeName, item.customerEmail, item.customerAddress, item.customerIdCard)">
+                (click)="detailCustomer(item.id, item.customerName, item.customerType.customerTypeName, item.customerEmail, item.customerAddress, item.customerIdCard)">
           <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
           <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
         </button>
@@ -83,11 +76,13 @@
           </button>
         </a>
       </td>
+
       <td class="text-center">
         <button data-bs-toggle="modal" data-bs-target="#deleteCustomer"
                 class="btn btn-danger btn-outline-secondary btn-sm"
-                (click)="getInfoCustomerDelete(item.customerName, item.id)">
-          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>
+                (click)="deleteCustomer(item.id, item.customerName)">
+          <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+          <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
         </button>
       </td>
     </tr>
@@ -116,47 +111,3 @@
     </ul>
   </nav>
 </div>
-
-<div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
-     aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content modalCSS">
-      <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel1">Bạn có chắc chắn muốn xóa?</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <span class="h6">Khách hàng:</span><strong class="text-danger ps-2">{{customerNameDelete}}</strong>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteCustomer()">Xóa</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--<div class="modal fade" id="deatailCustomer" tabindex="-1" aria-labelledby="exampleModalLabel2"-->
-<!--     aria-hidden="true">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content modalCSS">-->
-<!--&lt;!&ndash;      <div class="modal-header">&ndash;&gt;-->
-<!--&lt;!&ndash;        <h4 class="modal-title" id="exampleModalLabel2">Chi tiết khách hàng</h4>&ndash;&gt;-->
-<!--&lt;!&ndash;        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;-->
-<!--      <div class="modal-body">-->
-<!--        <span class="h6">Khách hàng:</span><strong class="text-danger ps-2">{{customerNameDetail}}</strong><br>-->
-<!--      </div>-->
-<!--&ndash;&gt;-->
-
-<!--      <div class="modal-footer">-->
-<!--&lt;!&ndash;        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>&ndash;&gt;-->
-<!--        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="detailCustomer(customerIdDetail, customerNameDetail)">Xem</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->

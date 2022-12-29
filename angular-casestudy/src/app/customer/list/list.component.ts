@@ -86,30 +86,35 @@ export class ListComponent implements OnInit {
     this.customerIdDetail = customerId;
   }
 
-  deleteCustomer(): void {
-    this.curPage = 1;
-    this.customerService.deleteCustomer(this.customerIdDelete).subscribe(() => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Xóa thành công!',
-        text: 'Khách hàng: ' + this.customerNameDelete,
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      });
+  deleteCustomer(id: number, name: string): void {
+    Swal.fire({
+      title: 'Xóa thành công!',
+      html: 'Khách hàng: ' + name,
+      icon: 'success',
+      text: 'Khách hàng: ' + this.customerNameDelete,
+      cancelButtonText: 'Đóng'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.customerService.deleteCustomer(id).subscribe(() => {
+          Swal.fire({
+            // position: 'center',
+            icon: 'success',
+            title: 'Xong!',
+            // text: 'Khách hàng: ' + name + ' (id: ' + id + ').',
+            // showConfirmButton: false,
+            timer: 1000
+          });
 
-      this.ngOnInit();
-    }, error => {
-      console.log(error);
-    }, () => {
-      console.log('Xóa khách hàng thành công!');
+          this.curPage = 1;
+          this.getAllCustomerPaging();
+        }, error => {
+          console.log(error);
+        });
+      }
     });
   }
 
-    detailStudent(id: number, name: string, type: string, email: string, address: string, cccd: string): void {
+    detailCustomer(id: number, name: string, type: string, email: string, address: string, cccd: string): void {
       Swal.fire({
         title: 'Chi tiết khách hàng',
         html: 'Khách hàng: ' + name + '<br>' + 'Loại khách: ' + type + '<br>' + 'Email: ' + email
@@ -126,7 +131,7 @@ export class ListComponent implements OnInit {
               // position: 'center',
               icon: 'success',
               title: 'Xong!',
-              // text: 'Học sinh: ' + name + ' (id: ' + id + ').',
+              // text: 'Khách hàng: ' + name + ' (id: ' + id + ').',
               // showConfirmButton: false,
               timer: 1000
             });
