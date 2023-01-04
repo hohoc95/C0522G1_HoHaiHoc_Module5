@@ -17,7 +17,7 @@ export class StudentService {
     return this.httpClient.get<Student[]>(this.API_URL + 'student?studentName_like=' + nameSearch + '&class.className_like=' + classSearch);
   }
 
-  findStudentSearchPaging(numberRecord: number, curPage: number, nameSearch: string, classSearch: string): Observable<Student[]> {
+    findStudentSearchPaging(numberRecord: number, curPage: number, nameSearch: string, classSearch: string): Observable<Student[]> {
     return this.httpClient.get<Student[]>(this.API_URL + 'student?_page=' + curPage + '&_limit=' + numberRecord + '&studentName_like=' + nameSearch + '&class.className_like=' + classSearch);
   }
 

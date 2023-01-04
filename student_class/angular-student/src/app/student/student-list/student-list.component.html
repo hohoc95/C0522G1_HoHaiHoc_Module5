@@ -1,6 +1,6 @@
 <div class="p-3 px-5">
   <h2 class="text-center fw-bold text-light mt-3">
-    DANH SÁCH SẢN PHẨM </h2>
+    DANH SÁCH HỌC SINH </h2>
 
   <nav class="navbar navbar-expand-lg py-0 my-0">
     <div class="container-fluid">
@@ -30,13 +30,13 @@
     </div>
   </nav>
 
-  <table class="table table-light table-striped table-bordered" id="productTable">
+  <table class="table table-light table-striped table-bordered" id="productTable" *ngIf="(studentListPaging.length !== 0) else isEmpty">
     <thead>
     <tr class="table-dark text-light">
       <th class="text-center">STT</th>
       <th>Tên</th>
       <th>Giới tính</th>
-      <th>Tuổi </th>
+      <th>Tuổi</th>
       <th>Địa chỉ</th>
       <th>Điểm</th>
       <th>Lớp học</th>
@@ -46,54 +46,58 @@
     </tr>
     </thead>
 
-    <tbody>
-    <tr *ngFor="let item of studentListPaging; index as i">
-      <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>
-      <td>{{item.studentName | titlecase}}</td>
-      <!--      <td>{{item.studentGender}}</td>-->
-      <td>
-        <span *ngIf="item.studentGender == 0">Nam</span>
-        <span *ngIf="item.studentGender == 1">Nữ</span>
-        <span *ngIf="item.studentGender == 2">LGBT</span>
-      </td>
-      <td>{{item.studentAge}}</td>
-      <td>{{item.studentAddress}}</td>
-<!--      <td>{{item.studentPoint}}</td>-->
-      <td >
-        <span *ngIf="item.studentPoint >=75;else elseBlock">Pass</span>
-        <ng-template #elseBlock>
-          <span>Fail</span>
-        </ng-template>
-      </td>
-      <td>{{item.class.className}}</td>
+    <tbody >
+      <tr *ngFor="let item of studentListPaging; index as i">
+        <td class="text-center">{{i + 1 + (curPage - 1) * numberRecord}}</td>
+        <td>{{item.studentName | titlecase}}</td>
+        <!--      <td>{{item.studentGender}}</td>-->
+        <td>
+          <span *ngIf="item.studentGender == 0">Nam</span>
+          <span *ngIf="item.studentGender == 1">Nữ</span>
+          <span *ngIf="item.studentGender == 2">LGBT</span>
+        </td>
+        <td>{{item.studentAge}}</td>
+        <td>{{item.studentAddress}}</td>
+        <!--      <td>{{item.studentPoint}}</td>-->
+        <td>
+          <span *ngIf="item.studentPoint >=75;else elseBlock">Pass</span>
+          <ng-template #elseBlock>
+            <span>Fail</span>
+          </ng-template>
+        </td>
+        <td>{{item.class.className}}</td>
 
-      <td class="text-center">
-        <button class="btn btn-info btn-outline-secondary btn-sm"
-                (click)="detailStudent(item.id, item.studentName, item.studentAge, item.studentPoint)">Detaillllll
-          <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
-          <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
-        </button>
-      </td>
-
-      <td class="text-center">
-        <a routerLink="/edit/{{item.id}}">
-          <button class="btn btn-success btn-outline-secondary btn-sm">
-<!--            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>-->
-            <span class="fa-solid fa-thin fa-pen-to-square text-light h6 m-auto px-2"></span>
+        <td class="text-center">
+          <button class="btn btn-info btn-outline-secondary btn-sm"
+                  (click)="detailStudent(item.id, item.studentName, item.studentAge, item.studentPoint)">Detaillllll
+            <!--          <span class="fa-solid text-light h6 m-auto px-2"></span>-->
+            <span class="fa-solid fa-thin fa-circle-info text-light h6 m-auto px-2"></span>
           </button>
-        </a>
-      </td>
+        </td>
 
-      <td class="text-center">
-        <button class="btn btn-danger btn-outline-secondary btn-sm"
-                (click)="deleteStudent(item.id, item.studentName)">
-<!--          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>-->
-          <span class="fa-solid fa-trash text-light h6 m-auto px-2"></span>
-        </button>
-      </td>
-    </tr>
+        <td class="text-center">
+          <a routerLink="/edit/{{item.id}}">
+            <button class="btn btn-success btn-outline-secondary btn-sm">
+              <!--            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>-->
+              <span class="fa-solid fa-thin fa-pen-to-square text-light h6 m-auto px-2"></span>
+            </button>
+          </a>
+        </td>
+
+        <td class="text-center">
+          <button class="btn btn-danger btn-outline-secondary btn-sm"
+                  (click)="deleteStudent(item.id, item.studentName)">
+            <!--          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>-->
+            <span class="fa-solid fa-trash text-light h6 m-auto px-2"></span>
+          </button>
+        </td>
+      </tr>
     </tbody>
+
   </table>
+  <ng-template #isEmpty>
+    <h1 class="text-center fw-bold text-light mt-3">Không có dữ liệu này!</h1>
+  </ng-template>
 
   <nav aria-label="..." class="justify-content-center d-flex">
     <ul class="pagination">
@@ -104,7 +108,8 @@
         <a class="page-link">&laquo;</a>
       </li>
 
-      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+      <li class="page-item"><a class="page-link disabled" href="" [text]="curPage + ' / ' + totalPage"
+                               *ngIf="curPage <= totalPage"></a>
       </li>
 
       <li class="page-item">

@@ -1,0 +1,102 @@
+{
+  "genres": [
+    {
+      "id": 1,
+      "genresName": "Action - Soul"
+    },
+    {
+      "id": 2,
+      "genresName": "Moba"
+    },
+    {
+      "id": 3,
+      "genresName": "Adventure"
+    }
+  ],
+  "game": [
+    {
+      "id": 1,
+      "gameName": "Elden Ring",
+      "gameDate": "25-02-2022",
+      "gameCode": "AAA-ED1",
+      "gameProduct": "From Software",
+      "gameDescription": "Game of the year 2022, đáng đồng tiền bát gạo",
+      "gameAmount": 20,
+      "gamePrice": 500,
+      "genres": {
+        "id": 1,
+        "genresName": "Action - Soul"
+      }
+    },
+    {
+      "id": 2,
+      "gameName": "League of Legends",
+      "gameDate": "27-10-2009",
+      "gameCode": "AAA-LOL",
+      "gameProduct": "Riot Games",
+      "gameDescription": "Game nhiều người chơi nhất hiện nay",
+      "gameAmount": 20,
+      "gamePrice": 0,
+      "genres": {
+        "id": 2,
+        "genresName": "Moba"
+      }
+    },
+    {
+      "id": 3,
+      "gameName": "Genshin Impact",
+      "gameDate": "28-09-2020",
+      "gameCode": "AAA-GI",
+      "gameProduct": "miHoYo",
+      "gameDescription": "Game có đồ họa bắt mắt nhất 2020",
+      "gameAmount": 20,
+      "gamePrice": 500,
+      "genres": {
+        "id": 3,
+        "genresName": "Adventure"
+      }
+    },
+    {
+      "id": 4,
+      "gameName": "Elden Ring",
+      "gameDate": "25-02-2022",
+      "gameCode": "AAA-ED1",
+      "gameProduct": "From Software",
+      "gameDescription": "Game of the year 2022, đáng đồng tiền bát gạo",
+      "gameAmount": 20,
+      "gamePrice": 500,
+      "genres": {
+        "id": 1,
+        "genresName": "Action - Soul"
+      }
+    },
+    {
+      "id": 5,
+      "gameName": "Elden Ring",
+      "gameDate": "25-02-2022",
+      "gameCode": "AAA-ED1",
+      "gameProduct": "From Software",
+      "gameDescription": "Game of the year 2022, đáng đồng tiền bát gạo",
+      "gameAmount": 20,
+      "gamePrice": 500,
+      "genres": {
+        "id": 1,
+        "genresName": "Action - Soul"
+      }
+    },
+    {
+      "id": 6,
+      "gameName": "Elden Ring",
+      "gameDate": "25-02-2022",
+      "gameCode": "AAA-ED1",
+      "gameProduct": "From Software",
+      "gameDescription": "Game of the year 2022, đáng đồng tiền bát gạo",
+      "gameAmount": 20,
+      "gamePrice": 500,
+      "genres": {
+        "id": 1,
+        "genresName": "Action - Soul"
+      }
+    }
+  ]
+}

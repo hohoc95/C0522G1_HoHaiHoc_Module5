@@ -107,25 +107,3 @@
     </nav>
   </div>
 </div>
-
-<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
-     aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content modalCSS">
-      <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel1">Bạn có chắc chắn muốn xóa?</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <img class="img-fluid pb-3" src="{{facilityImageDelete}}" alt="...">
-        <span class="h6">Dịch vụ:</span><strong class="text-danger ps-2">{{facilityNameDelete | uppercase}}</strong>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteFacility()">Xóa</button>
-      </div>
-    </div>
-  </div>
-</div>

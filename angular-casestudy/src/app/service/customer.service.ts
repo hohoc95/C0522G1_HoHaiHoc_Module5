@@ -4,9 +4,13 @@ import {Observable} from 'rxjs';
 import {Customer} from '../model/customer';
 import {CustomerType} from '../model/customer-type';
 
+// @ts-ignore
 @Injectable({
   providedIn: 'root'
 })
+const API_URL_CUSTOMER = 'http://localhost:8080/api';
+
+
 export class CustomerService {
   private API_URL = 'http://localhost:3000/';
 
@@ -21,6 +25,14 @@ export class CustomerService {
     return this.httpClient.get<Customer[]>(this.API_URL +
       'customers?customerName_like=' + nameSearch + '&customerAddress_like=' + addressSearch + '&customerPhone_like=' + phoneSearch);
   }
+/*  findAllCustomer(): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(API_URL_CUSTOMER + 'customers');
+  }
+
+  findAllCustomerSearch(nameSearch: string, addressSearch: string, phoneSearch: string): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(API_URL_CUSTOMER +
+      'customers?customerName_like=' + nameSearch + '&customerAddress_like=' + addressSearch + '&customerPhone_like=' + phoneSearch);
+  }*/
 
   findCustomerSearchPaging(numberRecord: number, curPage: number,
                            nameSearch: string, addressSearch: string, phoneSearch: string): Observable<Customer[]> {

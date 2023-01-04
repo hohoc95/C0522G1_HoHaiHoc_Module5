@@ -35,7 +35,24 @@ export class StudentListComponent implements OnInit {
     });
 
     this.studentService.findStudentSearchPaging(this.numberRecord, this.curPage, this.nameSearch, this.classSearch).subscribe(pagingList => {
+      // @ts-ignore
+      // this.studentListPaging = pagingList;
       this.studentListPaging = pagingList;
+
+/*      if (pagingList.length !== 0) {
+        this.studentListPaging = pagingList;
+      }
+
+      else   {
+        // const status = "không có kết quả"
+        // @ts-ignore
+        // this.studentListPaging = [status];
+        this.studentListPaging = [];
+        console.log(status);
+        // alert("không có dữ liệu");
+}*/
+
+
     }, error => {
       console.log(error);
     }, () => {
@@ -70,7 +87,7 @@ export class StudentListComponent implements OnInit {
     this.classSearch = '';
   }
 
-  searchByMore():void{
+  searchByMore(): void {
     this.curPage = 1;
     this.getAllStudentPaging();
   }
@@ -105,14 +122,15 @@ export class StudentListComponent implements OnInit {
       }
     });
   }
-  detailStudent(id: number, name: string, age:number, point:number): void {
+
+  detailStudent(id: number, name: string, age: number, point: number): void {
     Swal.fire({
       title: 'Chi tiết học sinh',
       // text: 'Học sinh: ' + name + ' /n ' + ' tuổi ' + age,
       // // icon: 'info',
       html: 'Học sinh: ' + name +
-        ' <br> ' + ' Tuổi ' + age + ' <br> '+ 'Điểm thi: ' + point,
-      showConfirmButton:false,
+        ' <br> ' + ' Tuổi ' + age + ' <br> ' + 'Điểm thi: ' + point,
+      showConfirmButton: false,
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
