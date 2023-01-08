@@ -1,0 +1,110 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "productName": "Sting",
+      "productMade": "VietNam",
+      "productPrice": 250000,
+      "productType": "Thùng"
+    },
+    {
+      "id": 2,
+      "productName": "Tiger",
+      "productMade": "VietNam",
+      "productPrice": 220000,
+      "productType": "Thùng"
+    }
+  ],
+  "repo": [
+    {
+      "repoCode": "LH-0001",
+      "product": {
+        "id": 1,
+        "productName": "Sting",
+        "productMade": "VietNam",
+        "productPrice": 250000,
+        "productType": "Thùng"
+      },
+      "repoAmount": 5,
+      "repoDateIn": "28/12/2020",
+      "repoDateStart": "10/09/2020",
+      "repoDateEnd": "10/09/2021",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "repoCode": "LH-0002",
+      "product": {
+        "id": 2,
+        "productName": "Tiger",
+        "productMade": "VietNam",
+        "productPrice": 220000,
+        "productType": "Thùng"
+      },
+      "repoAmount": 5,
+      "repoDateIn": "28/12/2020",
+      "repoDateStart": "10/09/2020",
+      "repoDateEnd": "10/09/2021"
+    },
+    {
+      "repoCode": "LH-0003",
+      "product": {
+        "id": 2,
+        "productName": "Tiger",
+        "productMade": "VietNam",
+        "productPrice": 220000,
+        "productType": "Thùng"
+      },
+      "repoAmount": 5,
+      "repoDateIn": "28/12/2020",
+      "repoDateStart": "10/09/2020",
+      "repoDateEnd": "10/09/2021",
+      "id": 3
+    },
+    {
+      "repoCode": "LH-0004",
+      "product": {
+        "id": 1,
+        "productName": "Sting",
+        "productMade": "VietNam",
+        "productPrice": 250000,
+        "productType": "Thùng"
+      },
+      "repoAmount": "15",
+      "repoDateIn": "2023-01-05",
+      "repoDateStart": "2023-01-05",
+      "repoDateEnd": "2023-01-05",
+      "id": 4
+    },
+    {
+      "repoCode": "LH-0008",
+      "product": {
+        "id": 1,
+        "productName": "Sting",
+        "productMade": "VietNam",
+        "productPrice": 250000,
+        "productType": "Thùng"
+      },
+      "repoAmount": "20",
+      "repoDateIn": "2023-01-05",
+      "repoDateStart": "2023-01-05",
+      "repoDateEnd": "2023-01-05",
+      "id": 5
+    },
+    {
+      "repoCode": "LH-0009",
+      "product": {
+        "id": 2,
+        "productName": "Tiger",
+        "productMade": "VietNam",
+        "productPrice": 220000,
+        "productType": "Thùng"
+      },
+      "repoAmount": "20",
+      "repoDateIn": "2023-01-05",
+      "repoDateStart": "2023-01-05",
+      "repoDateEnd": "2023-01-05",
+      "id": 6
+    }
+  ]
+}
