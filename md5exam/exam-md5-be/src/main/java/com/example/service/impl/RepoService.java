@@ -23,21 +23,21 @@ public class RepoService implements IRepoService {
 
     @Override
     public Optional<Repo> findById(Integer id) {
-        return Optional.empty();
+        return iRepoRepository.findById(id);
     }
 
     @Override
     public void update(Repo repo) {
-
+        iRepoRepository.save(repo);
     }
 
     @Override
     public void deleteLogical(Integer id) {
-
+        iRepoRepository.deleteLogical(id);
     }
 
     @Override
     public Page<IRepoDto> searchRepo(String nameSearch, String dateInSearch, String dateEndSearch, Pageable pageable) {
-        return null;
+        return iRepoRepository.searchRepo(nameSearch, dateInSearch, dateEndSearch, pageable);
     }
 }

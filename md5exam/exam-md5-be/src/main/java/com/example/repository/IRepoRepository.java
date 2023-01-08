@@ -5,6 +5,7 @@ import com.example.model.Repo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,4 +20,8 @@ public interface IRepoRepository extends JpaRepository<Repo, Integer> {
                                  @Param("dateInSearch") String dateInSearch,
                                  @Param("dateEndSearch") String dateEndSearch,
                                  Pageable pageable);
+
+    @Modifying
+    @Query(value = "update repo set is_delete = true where repo_id = :idDelete", nativeQuery = true)
+    void deleteLogical(@Param("idDelete") Integer id);
 }
